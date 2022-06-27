@@ -50,7 +50,7 @@
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.label1.Size = new System.Drawing.Size(287, 72);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Delete Books";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -64,7 +64,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(74, 57);
-            this.btnBack.TabIndex = 16;
+            this.btnBack.TabIndex = 3;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -85,7 +85,7 @@
             this.txtBookID.Location = new System.Drawing.Point(194, 34);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 7;
+            this.txtBookID.TabIndex = 0;
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             this.btnReturn.Location = new System.Drawing.Point(311, 384);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(150, 57);
-            this.btnReturn.TabIndex = 18;
+            this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
             // 
