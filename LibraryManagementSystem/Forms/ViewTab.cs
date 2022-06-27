@@ -33,11 +33,30 @@ namespace LibraryManagementSystem
         {
             con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
+
             cmd = new SqlCommand("SELECT * FROM booksData", con);
             cmd.ExecuteNonQuery();
+
             DataTable dt = new DataTable();
             da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dgvBooks.DataSource = dt;
+            con.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con.Open();
+            string searchText = txtSearch.Text;
+
+            string cmdText = "SELECT BookID, Title, Author, Edition, Publication FROM booksData WHERE BookID='" + searchText + "'";
+            cmd = new SqlCommand(cmdText, con);
+
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
             dgvBooks.DataSource = dt;
             con.Close();
         }

@@ -59,7 +59,8 @@ namespace LibraryManagementSystem
             string edition = txtEdition.Text;
             string publication = txtPublication.Text;
 
-            cmd = new SqlCommand("INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','"+author+ "','" + edition + "','" + publication + "')", con);
+            string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "')";
+            cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully added one book.");
