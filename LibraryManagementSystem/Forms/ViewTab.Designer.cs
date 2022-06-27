@@ -98,12 +98,12 @@
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(95, 101);
+            this.dgvBooks.Location = new System.Drawing.Point(71, 101);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.ReadOnly = true;
-            this.dgvBooks.RowHeadersWidth = 30;
+            this.dgvBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvBooks.RowTemplate.Height = 24;
-            this.dgvBooks.Size = new System.Drawing.Size(586, 357);
+            this.dgvBooks.Size = new System.Drawing.Size(634, 357);
             this.dgvBooks.TabIndex = 22;
             // 
             // ViewTab

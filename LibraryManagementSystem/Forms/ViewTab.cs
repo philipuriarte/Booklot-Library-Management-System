@@ -50,7 +50,7 @@ namespace LibraryManagementSystem
             con.Open();
             string searchText = txtSearch.Text;
 
-            string cmdText = "SELECT BookID, Title, Author, Edition, Publication FROM booksData WHERE BookID='" + searchText + "'";
+            string cmdText = "SELECT BookID, Title, Author, Edition, Publication, Status FROM booksData WHERE BookID='" + searchText + "'";
             cmd = new SqlCommand(cmdText, con);
 
             SqlDataReader dr;
