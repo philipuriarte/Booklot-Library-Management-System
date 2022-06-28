@@ -186,6 +186,7 @@
             this.btnIssue.TabIndex = 22;
             this.btnIssue.Text = "Issue Book";
             this.btnIssue.UseVisualStyleBackColor = false;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // btnClear
             // 

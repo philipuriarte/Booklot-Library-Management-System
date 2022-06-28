@@ -35,7 +35,7 @@ namespace LibraryManagementSystem
             con.Open();
             int bookID = Convert.ToInt32(txtBookID.Text);
 
-            cmd = new SqlCommand("DELETE FROM booksData WHERE BookID='" + bookID + "'", con);
+            cmd = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully deleted book ID: " + bookID);
