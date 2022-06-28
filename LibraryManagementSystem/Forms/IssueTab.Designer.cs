@@ -184,7 +184,7 @@
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(150, 57);
             this.btnIssue.TabIndex = 22;
-            this.btnIssue.Text = "Issue";
+            this.btnIssue.Text = "Issue Book";
             this.btnIssue.UseVisualStyleBackColor = false;
             // 
             // btnClear
@@ -199,6 +199,7 @@
             this.btnClear.TabIndex = 23;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // IssueTab
             // 

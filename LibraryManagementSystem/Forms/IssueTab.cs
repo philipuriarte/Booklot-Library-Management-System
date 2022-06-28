@@ -24,5 +24,12 @@ namespace LibraryManagementSystem.Forms
             newTab.ShowDialog();
             this.Close();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBookID.Clear();
+            txtStudID.Clear();
+            txtName.Clear();
+        }
     }
 }
