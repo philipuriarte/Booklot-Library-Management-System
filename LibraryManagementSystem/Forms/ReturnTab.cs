@@ -35,7 +35,7 @@ namespace LibraryManagementSystem.Forms
             con.Open();
 
             int bookID = Convert.ToInt32(txtBookID.Text);
-            string availText = "avail";
+            string availText = "Avail";
 
             string cmdText = "UPDATE booksData SET Status = '" + availText + "' WHERE BookID = '" + bookID + "'";
             cmd = new SqlCommand(cmdText, con);

@@ -255,6 +255,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddTab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DLSUD-D Library Management System";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

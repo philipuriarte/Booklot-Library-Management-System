@@ -121,6 +121,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewTab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DLSUD-D Library Management System";
             this.Load += new System.EventHandler(this.ViewTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
