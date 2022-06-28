@@ -92,6 +92,7 @@
             this.btnReturn.TabIndex = 21;
             this.btnReturn.Text = "Return Book";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // panel1
             // 

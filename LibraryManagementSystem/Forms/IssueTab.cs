@@ -46,7 +46,7 @@ namespace LibraryManagementSystem.Forms
             string name = txtName.Text;
             string unavailText = "Borrowed by " + name + ", student ID: " + studID;
 
-            string cmdText = "UPDATE booksData SET Status ='" + unavailText + "' WHERE BookID = '" + bookID + "'";
+            string cmdText = "UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'";
             cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
