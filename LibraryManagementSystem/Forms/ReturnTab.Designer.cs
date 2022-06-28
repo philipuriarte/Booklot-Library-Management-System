@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBookID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,18 +80,18 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Enter book ID to return book";
             // 
-            // btnSubmit
+            // btnReturn
             // 
-            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSubmit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSubmit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(317, 386);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 57);
-            this.btnSubmit.TabIndex = 21;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Location = new System.Drawing.Point(317, 386);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(150, 57);
+            this.btnReturn.TabIndex = 21;
+            this.btnReturn.Text = "Return Book";
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -131,7 +131,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 499);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
@@ -151,7 +151,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtBookID;
         private System.Windows.Forms.Label label2;
