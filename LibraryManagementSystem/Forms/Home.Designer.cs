@@ -47,10 +47,10 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.label1.Size = new System.Drawing.Size(778, 79);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to DLSU-D Library";
+            this.label1.Text = "Welcome to Booklot Library";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAdd
@@ -130,7 +130,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(778, 57);
             this.label2.TabIndex = 6;
-            this.label2.Text = "© Copyright 2022 De La Salle University - Dasmariñas";
+            this.label2.Text = "© Copyright 2022 Booklot Library";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
@@ -151,7 +151,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DLSUD-D Library Management System";
+            this.Text = "Booklot Library Management System";
             this.ResumeLayout(false);
 
         }
