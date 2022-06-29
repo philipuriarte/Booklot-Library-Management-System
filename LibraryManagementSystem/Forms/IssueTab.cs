@@ -32,8 +32,7 @@ namespace LibraryManagementSystem.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtBookID.Clear();
-            txtStudID.Clear();
-            txtName.Clear();
+            txtLibraryID.Clear();
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
@@ -42,20 +41,18 @@ namespace LibraryManagementSystem.Forms
             con.Open();
 
             int bookID = Convert.ToInt32(txtBookID.Text);
-            string studID = txtStudID.Text;
-            string name = txtName.Text;
-            string unavailText = "Borrowed by " + name + ", student ID: " + studID;
+            string libraryID = txtLibraryID.Text;
+            string unavailText = "Borrowed by student library ID: " + libraryID;
 
             string cmdText = "UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'";
             cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully issued book ID " + bookID + " to student " + studID);
+            MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID);
             con.Close();
 
             txtBookID.Clear();
-            txtStudID.Clear();
-            txtName.Clear();
+            txtLibraryID.Clear();
         }
     }
 }
