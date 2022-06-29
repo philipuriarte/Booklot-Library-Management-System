@@ -46,19 +46,34 @@ namespace LibraryManagementSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-            con.Open();
-            string searchText = txtSearch.Text;
+            if (int.TryParse(txtSearch.Text, out int id))
+            {
+                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con.Open();
+                string searchText = txtSearch.Text;
 
-            string cmdText = "SELECT BookID, Title, Author, Edition, Publication, Status FROM booksData WHERE BookID = '" + searchText + "'";
-            cmd = new SqlCommand(cmdText, con);
+                string cmdText = "SELECT BookID, Title, Author, Edition, Publication, Status FROM booksData WHERE BookID = '" + searchText + "'";
+                cmd = new SqlCommand(cmdText, con);
 
-            SqlDataReader dr;
-            dr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            dgvBooks.DataSource = dt;
-            con.Close();
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                dgvBooks.DataSource = dt;
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please enter Book ID.");
+            }            
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {         
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+            }            
         }
     }
 }

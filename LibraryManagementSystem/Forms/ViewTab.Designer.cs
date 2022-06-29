@@ -78,6 +78,7 @@
             this.txtSearch.Size = new System.Drawing.Size(147, 27);
             this.txtSearch.TabIndex = 20;
             this.txtSearch.UseWaitCursor = true;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // btnSearch
             // 
