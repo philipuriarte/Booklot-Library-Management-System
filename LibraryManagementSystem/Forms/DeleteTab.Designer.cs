@@ -41,15 +41,15 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(260, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.label1.Size = new System.Drawing.Size(287, 72);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.label1.Size = new System.Drawing.Size(778, 79);
             this.label1.TabIndex = 4;
             this.label1.Text = "Delete Books";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,9 +61,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(74, 57);
+            this.btnBack.Size = new System.Drawing.Size(45, 40);
             this.btnBack.TabIndex = 3;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -109,7 +109,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 57);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Delete Book";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -141,7 +141,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteTab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DLSUD-D Library Management System";
+            this.Text = "Booklot Library Management System";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
