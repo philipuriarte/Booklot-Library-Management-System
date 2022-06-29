@@ -62,6 +62,10 @@ namespace LibraryManagementSystem
                 dgvBooks.DataSource = dt;
                 con.Close();
             }
+            else if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                ViewTab_Load(sender, e);
+            }
             else
             {
                 MessageBox.Show("Please enter Book ID.");
