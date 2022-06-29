@@ -77,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(117, 201);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 103);
-            this.panel1.TabIndex = 17;
+            this.panel1.TabIndex = 1;
             // 
             // txtBookID
             // 
@@ -85,7 +85,7 @@
             this.txtBookID.Location = new System.Drawing.Point(194, 34);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 0;
+            this.txtBookID.TabIndex = 1;
             // 
             // label2
             // 
@@ -108,7 +108,7 @@
             this.btnDelete.Location = new System.Drawing.Point(311, 384);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 57);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete Book";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);

@@ -64,7 +64,7 @@
             this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(45, 40);
-            this.btnBack.TabIndex = 18;
+            this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -89,7 +89,7 @@
             this.btnReturn.Location = new System.Drawing.Point(311, 384);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(150, 57);
-            this.btnReturn.TabIndex = 21;
+            this.btnReturn.TabIndex = 3;
             this.btnReturn.Text = "Return Book";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -103,7 +103,7 @@
             this.panel1.Location = new System.Drawing.Point(117, 201);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 103);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 1;
             // 
             // txtBookID
             // 
@@ -111,7 +111,7 @@
             this.txtBookID.Location = new System.Drawing.Point(194, 34);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 7;
+            this.txtBookID.TabIndex = 2;
             // 
             // label2
             // 

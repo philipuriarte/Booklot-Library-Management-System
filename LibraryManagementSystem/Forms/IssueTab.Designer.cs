@@ -68,7 +68,7 @@
             this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(45, 40);
-            this.btnBack.TabIndex = 17;
+            this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -84,7 +84,7 @@
             this.panel1.Location = new System.Drawing.Point(116, 176);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 177);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 1;
             // 
             // label5
             // 
@@ -104,7 +104,7 @@
             this.txtLibraryID.Location = new System.Drawing.Point(194, 110);
             this.txtLibraryID.Name = "txtLibraryID";
             this.txtLibraryID.Size = new System.Drawing.Size(316, 34);
-            this.txtLibraryID.TabIndex = 8;
+            this.txtLibraryID.TabIndex = 3;
             // 
             // txtBookID
             // 
@@ -112,7 +112,7 @@
             this.txtBookID.Location = new System.Drawing.Point(194, 34);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 7;
+            this.txtBookID.TabIndex = 2;
             // 
             // label3
             // 
@@ -159,7 +159,7 @@
             this.btnIssue.Location = new System.Drawing.Point(221, 398);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(150, 57);
-            this.btnIssue.TabIndex = 22;
+            this.btnIssue.TabIndex = 4;
             this.btnIssue.Text = "Issue Book";
             this.btnIssue.UseVisualStyleBackColor = false;
             this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
@@ -173,7 +173,7 @@
             this.btnClear.Location = new System.Drawing.Point(415, 398);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 57);
-            this.btnClear.TabIndex = 23;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);

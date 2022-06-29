@@ -62,6 +62,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(280, 57);
             this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Add book";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -75,6 +76,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(280, 57);
             this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Delete book";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -89,6 +91,7 @@
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(280, 57);
             this.btnView.TabIndex = 1;
+            this.btnView.TabStop = false;
             this.btnView.Text = "View all books";
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
@@ -102,6 +105,7 @@
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(280, 57);
             this.btnIssue.TabIndex = 4;
+            this.btnIssue.TabStop = false;
             this.btnIssue.Text = "Issue book to student";
             this.btnIssue.UseVisualStyleBackColor = false;
             this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
@@ -115,6 +119,7 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(280, 57);
             this.btnReturn.TabIndex = 5;
+            this.btnReturn.TabStop = false;
             this.btnReturn.Text = "Return book";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);

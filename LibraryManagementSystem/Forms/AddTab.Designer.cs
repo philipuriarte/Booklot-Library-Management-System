@@ -102,7 +102,7 @@
             this.txtPublication.Location = new System.Drawing.Point(194, 226);
             this.txtPublication.Name = "txtPublication";
             this.txtPublication.Size = new System.Drawing.Size(316, 34);
-            this.txtPublication.TabIndex = 11;
+            this.txtPublication.TabIndex = 5;
             // 
             // txtEdition
             // 
@@ -110,7 +110,7 @@
             this.txtEdition.Location = new System.Drawing.Point(194, 177);
             this.txtEdition.Name = "txtEdition";
             this.txtEdition.Size = new System.Drawing.Size(316, 34);
-            this.txtEdition.TabIndex = 10;
+            this.txtEdition.TabIndex = 4;
             // 
             // txtAuthor
             // 
@@ -118,7 +118,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(194, 130);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(316, 34);
-            this.txtAuthor.TabIndex = 9;
+            this.txtAuthor.TabIndex = 3;
             // 
             // txtTitle
             // 
@@ -126,7 +126,7 @@
             this.txtTitle.Location = new System.Drawing.Point(194, 80);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(316, 34);
-            this.txtTitle.TabIndex = 8;
+            this.txtTitle.TabIndex = 2;
             // 
             // txtBookID
             // 
@@ -134,7 +134,7 @@
             this.txtBookID.Location = new System.Drawing.Point(194, 34);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 7;
+            this.txtBookID.TabIndex = 1;
             // 
             // label6
             // 
@@ -193,7 +193,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(221, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 57);
-            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -208,7 +208,7 @@
             this.btnClear.Location = new System.Drawing.Point(415, 419);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 57);
-            this.btnClear.TabIndex = 14;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -223,7 +223,7 @@
             this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(45, 40);
-            this.btnBack.TabIndex = 15;
+            this.btnBack.TabIndex = 8;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 

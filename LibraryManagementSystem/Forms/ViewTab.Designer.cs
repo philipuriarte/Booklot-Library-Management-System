@@ -63,7 +63,7 @@
             this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(45, 40);
-            this.btnBack.TabIndex = 18;
+            this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -76,7 +76,7 @@
             this.txtSearch.MaxLength = 50;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(147, 27);
-            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TabIndex = 1;
             this.txtSearch.UseWaitCursor = true;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
@@ -88,7 +88,7 @@
             this.btnSearch.Location = new System.Drawing.Point(648, 49);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 33);
-            this.btnSearch.TabIndex = 21;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -108,6 +108,7 @@
             this.dgvBooks.RowTemplate.Height = 24;
             this.dgvBooks.Size = new System.Drawing.Size(634, 326);
             this.dgvBooks.TabIndex = 22;
+            this.dgvBooks.TabStop = false;
             // 
             // btnRefresh
             // 
@@ -117,7 +118,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(338, 440);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(88, 33);
-            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.ViewTab_Load);
