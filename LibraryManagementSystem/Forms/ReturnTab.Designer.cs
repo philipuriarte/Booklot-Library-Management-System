@@ -41,14 +41,14 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(1, 0);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.label1.Size = new System.Drawing.Size(778, 79);
             this.label1.TabIndex = 3;
             this.label1.Text = "Return Book";
@@ -61,9 +61,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(74, 57);
+            this.btnBack.Size = new System.Drawing.Size(45, 40);
             this.btnBack.TabIndex = 18;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -74,7 +74,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(120, 184);
+            this.label3.Location = new System.Drawing.Point(114, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 16);
             this.label3.TabIndex = 22;
@@ -86,7 +86,7 @@
             this.btnReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(317, 386);
+            this.btnReturn.Location = new System.Drawing.Point(311, 384);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(150, 57);
             this.btnReturn.TabIndex = 21;
@@ -100,7 +100,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.txtBookID);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(123, 203);
+            this.panel1.Location = new System.Drawing.Point(117, 201);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 103);
             this.panel1.TabIndex = 20;
@@ -140,7 +140,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReturnTab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DLSUD-D Library Management System";
+            this.Text = "Booklot Library Management System";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
