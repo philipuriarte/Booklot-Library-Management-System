@@ -156,7 +156,7 @@
             this.btnIssue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnIssue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssue.Location = new System.Drawing.Point(226, 398);
+            this.btnIssue.Location = new System.Drawing.Point(221, 398);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(150, 57);
             this.btnIssue.TabIndex = 22;
@@ -170,7 +170,7 @@
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(420, 398);
+            this.btnClear.Location = new System.Drawing.Point(415, 398);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 57);
             this.btnClear.TabIndex = 23;

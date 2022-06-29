@@ -91,7 +91,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(112, 104);
+            this.panel1.Location = new System.Drawing.Point(115, 114);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 291);
             this.panel1.TabIndex = 3;
@@ -190,7 +190,7 @@
             this.btnSubmit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSubmit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(226, 419);
+            this.btnSubmit.Location = new System.Drawing.Point(221, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 57);
             this.btnSubmit.TabIndex = 13;
@@ -205,7 +205,7 @@
             this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClear.Location = new System.Drawing.Point(420, 419);
+            this.btnClear.Location = new System.Drawing.Point(415, 419);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 57);
             this.btnClear.TabIndex = 14;
@@ -233,7 +233,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(109, 85);
+            this.label7.Location = new System.Drawing.Point(112, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(230, 16);
             this.label7.TabIndex = 20;
