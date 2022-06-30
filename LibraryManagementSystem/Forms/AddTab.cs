@@ -50,27 +50,37 @@ namespace LibraryManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-            con.Open();
+            if (String.IsNullOrEmpty(txtBookID.Text) || String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
+            {
+                MessageBox.Show("Please fill up all the textboxes.");
+            }
+            else
+            {
+                if (int.TryParse(txtBookID.Text, out int id))
+                {
+                    con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                    con.Open();
 
-            int bookID = Convert.ToInt32(txtBookID.Text);
-            string title = txtTitle.Text;
-            string author = txtAuthor.Text;
-            string edition = txtEdition.Text;
-            string publication = txtPublication.Text;
+                    int bookID = Convert.ToInt32(txtBookID.Text);
+                    string title = txtTitle.Text;
+                    string author = txtAuthor.Text;
+                    string edition = txtEdition.Text;
+                    string publication = txtPublication.Text;
 
-            string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "','" + "Avail" + "')";
-            cmd = new SqlCommand(cmdText, con);
-            cmd.ExecuteNonQuery();
+                    string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                    cmd = new SqlCommand(cmdText, con);
+                    cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.Close();
+                    MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
 
-            txtBookID.Clear();
-            txtTitle.Clear();
-            txtAuthor.Clear();
-            txtEdition.Clear();
-            txtPublication.Clear();
+                    btnClear_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a number for the book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }            
         }
     }
 }
