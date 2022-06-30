@@ -26,26 +26,33 @@ namespace LibraryManagementSystem.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source = DESKTOP-9MBNT14\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
-            con.Open();
-            cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
-
-            if (dt.Rows.Count > 0)
+            if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
             {
-                MessageBox.Show("Login Success", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                this.Hide();
-                Home newTab = new Home();
-                newTab.ShowDialog();
-                this.Close();
-
+                MessageBox.Show("Please enter username and password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con = new SqlConnection("Data Source = DESKTOP-9MBNT14\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
+                con.Open();
+                cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login Success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    Home newTab = new Home();
+                    newTab.ShowDialog();
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
