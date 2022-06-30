@@ -49,13 +49,15 @@ namespace LibraryManagementSystem
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
-        {
+        {   
+            // Checks if any txtBoxes are empty
             if (String.IsNullOrEmpty(txtBookID.Text) || String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
             {
                 MessageBox.Show("Please fill up all the textboxes.");
             }
             else
             {
+                // Checks if input in txtBookID is an integer value
                 if (int.TryParse(txtBookID.Text, out int id))
                 {
                     con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
@@ -67,14 +69,30 @@ namespace LibraryManagementSystem
                     string edition = txtEdition.Text;
                     string publication = txtPublication.Text;
 
-                    string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "','" + "Avail" + "')";
-                    cmd = new SqlCommand(cmdText, con);
+                    string cmdText1 = "SELECT * FROM booksData WHERE BookID = '" + txtBookID.Text + "'";
+                    cmd = new SqlCommand(cmdText1, con);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
+                    DataTable dt = new DataTable();
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
 
-                    btnClear_Click(sender, e);
+                    // Checks if bookID is already taken in the database
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Book ID already exists. Please choose another one.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string cmdText2 = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                        cmd = new SqlCommand(cmdText2, con);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
+
+                        btnClear_Click(sender, e);
+                    }                    
                 }
                 else
                 {
