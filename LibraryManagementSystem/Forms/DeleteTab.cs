@@ -43,10 +43,5 @@ namespace LibraryManagementSystem
 
             txtBookID.Clear();
         }
-
-        private void DeleteTab_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
