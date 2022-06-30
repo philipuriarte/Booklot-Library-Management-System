@@ -52,11 +52,21 @@ namespace LibraryManagementSystem.Forms
                 else
                 {
                     MessageBox.Show("Incorrect username or password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtUser.Clear();
+                    txtPass.Clear();
                 }
             }
         }
 
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
