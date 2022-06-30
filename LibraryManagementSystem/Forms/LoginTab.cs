@@ -26,7 +26,7 @@ namespace LibraryManagementSystem.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source = LAPTOP-ID3FFBBJ\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
+            con = new SqlConnection("Data Source = DESKTOP-9MBNT14\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
             con.Open();
             cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
             da = new SqlDataAdapter(cmd);
