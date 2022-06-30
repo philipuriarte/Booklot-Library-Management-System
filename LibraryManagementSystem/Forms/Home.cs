@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
-    public partial class Home : System.Windows.Forms.Form
+    public partial class Home : Form
     {
         public Home()
         {
