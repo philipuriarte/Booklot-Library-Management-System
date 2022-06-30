@@ -38,7 +38,7 @@ namespace LibraryManagementSystem
             cmd = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully deleted book ID: " + bookID);
+            MessageBox.Show("Successfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
 
             txtBookID.Clear();

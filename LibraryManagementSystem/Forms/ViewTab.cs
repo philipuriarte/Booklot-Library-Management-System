@@ -68,7 +68,7 @@ namespace LibraryManagementSystem
             }
             else
             {
-                MessageBox.Show("Please enter Book ID.");
+                MessageBox.Show("Please enter Book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }            
         }
 

@@ -48,7 +48,7 @@ namespace LibraryManagementSystem.Forms
             cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID);
+            MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
 
             txtBookID.Clear();

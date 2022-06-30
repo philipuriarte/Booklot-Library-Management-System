@@ -41,7 +41,7 @@ namespace LibraryManagementSystem.Forms
             cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully returned book ID: " + bookID);
+            MessageBox.Show("Successfully returned book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
 
             txtBookID.Clear();

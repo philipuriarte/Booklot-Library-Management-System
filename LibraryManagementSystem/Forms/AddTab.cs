@@ -63,7 +63,7 @@ namespace LibraryManagementSystem
             cmd = new SqlCommand(cmdText, con);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Successfully added one book.");
+            MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
 
             txtBookID.Clear();
