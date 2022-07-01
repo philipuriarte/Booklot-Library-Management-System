@@ -41,9 +41,10 @@ namespace LibraryManagementSystem.Forms
                 dt = new DataTable();
                 da.Fill(dt);
 
-                // Checks if any entered username and password is correct/within the database.
-                // Revert if condition back to "if (dt.Rows.Count > 0)" later.
-                if (txtUser.Text == "admin" & txtPass.Text == "password123")
+                // Checks if any entered username and password is correct/within the database
+                // Revert if condition back to "if (dt.Rows.Count > 0)" later
+                // Changed username and pass to "a" for faster testing
+                if (txtUser.Text == "a" & txtPass.Text == "a")
                 {
                     this.Hide();
                     Home newTab = new Home();
