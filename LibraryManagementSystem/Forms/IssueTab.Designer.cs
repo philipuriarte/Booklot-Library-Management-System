@@ -75,7 +75,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.Linen;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtLibraryID);
             this.panel1.Controls.Add(this.txtBookID);
