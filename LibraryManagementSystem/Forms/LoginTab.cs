@@ -27,23 +27,24 @@ namespace LibraryManagementSystem.Forms
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Checks if any txtBoxes are empty
             if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
             {
                 MessageBox.Show("Please enter username and password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                con = new SqlConnection("Data Source = MAJO-PC\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
+                con = new SqlConnection("Data Source = DESKTOP-9MBNT14\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
                 con.Open();
                 cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
+                // Checks if any entered username and password is correct/within the database.
+                // Revert if condition back to "if (dt.Rows.Count > 0)" later.
                 if (txtUser.Text == "admin" & txtPass.Text == "password123")
                 {
-                    MessageBox.Show("Login Success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     this.Hide();
                     Home newTab = new Home();
                     newTab.ShowDialog();
@@ -59,6 +60,7 @@ namespace LibraryManagementSystem.Forms
             }
         }
 
+        // Checks if the user pressed enter in txtPass
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -67,17 +69,13 @@ namespace LibraryManagementSystem.Forms
             }
         }
 
+        // Checks if the user pressed enter in txtUser
         private void txtUser_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnLogin_Click(sender, e);
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
