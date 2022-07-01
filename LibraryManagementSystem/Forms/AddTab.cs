@@ -21,6 +21,8 @@ namespace LibraryManagementSystem
         SqlCommand cmd;
         SqlDataAdapter da;
 
+        public static int bookID = 0;
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -66,6 +68,8 @@ namespace LibraryManagementSystem
                     int bookID = Convert.ToInt32(txtBookID.Text);
                     string title = txtTitle.Text;
                     string author = txtAuthor.Text;
+                    // Placeholder for txtGenre.Text
+                    string genre = "Genre";
                     string edition = txtEdition.Text;
                     string publication = txtPublication.Text;
 
@@ -84,7 +88,7 @@ namespace LibraryManagementSystem
                     }
                     else
                     {
-                        string cmdText2 = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                        string cmdText2 = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                         cmd = new SqlCommand(cmdText2, con);
                         cmd.ExecuteNonQuery();
 

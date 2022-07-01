@@ -29,6 +29,7 @@ namespace LibraryManagementSystem
             this.Close();
         }
 
+        // Loads the database to dataGrid when ViewTab form is launched
         private void ViewTab_Load(object sender, EventArgs e)
         {
             con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
@@ -46,6 +47,7 @@ namespace LibraryManagementSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            // checks if input in txtSearch is an integer value
             if (int.TryParse(txtSearch.Text, out int id))
             {
                 con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
@@ -62,6 +64,7 @@ namespace LibraryManagementSystem
                 dgvBooks.DataSource = dt;
                 con.Close();
             }
+            // checks if txtSearch is empty
             else if (String.IsNullOrEmpty(txtSearch.Text))
             {
                 ViewTab_Load(sender, e);
@@ -72,12 +75,23 @@ namespace LibraryManagementSystem
             }            
         }
 
+        // Checks if the user pressed enter in txtSearch
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {         
             if (e.KeyCode == Keys.Enter)
             {
                 btnSearch_Click(sender, e);
             }            
+        }
+
+        private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSort.SelectedIndex == 0)
+                MessageBox.Show("Alphabetical");
+            if (cmbSort.SelectedIndex == 1)
+                MessageBox.Show("Book ID");
+            if (cmbSort.SelectedIndex == 2)
+                MessageBox.Show("Genre");
         }
     }
 }
