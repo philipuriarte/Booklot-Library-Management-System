@@ -60,5 +60,19 @@ namespace LibraryManagementSystem
             newTab.ShowDialog();
             this.Close();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Forms.LoginTab newTab = new Forms.LoginTab();
+            newTab.ShowDialog();
+            this.Close();
+        }
+    
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
