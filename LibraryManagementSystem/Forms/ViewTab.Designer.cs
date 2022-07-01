@@ -35,6 +35,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.cmbSort = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             this.btnBack.Location = new System.Drawing.Point(28, 32);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(45, 40);
-            this.btnBack.TabIndex = 4;
+            this.btnBack.TabIndex = 5;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -87,7 +89,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(648, 49);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(88, 33);
+            this.btnSearch.Size = new System.Drawing.Size(95, 33);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -119,10 +121,38 @@
             this.btnRefresh.Location = new System.Drawing.Point(326, 440);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(129, 47);
-            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "REFRESH";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.ViewTab_Load);
+            // 
+            // cmbSort
+            // 
+            this.cmbSort.AllowDrop = true;
+            this.cmbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSort.FormattingEnabled = true;
+            this.cmbSort.Items.AddRange(new object[] {
+            "Alphabetical",
+            "Book ID",
+            "Genre"});
+            this.cmbSort.Location = new System.Drawing.Point(165, 51);
+            this.cmbSort.Name = "cmbSort";
+            this.cmbSort.Size = new System.Drawing.Size(113, 28);
+            this.cmbSort.TabIndex = 3;
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(87, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 22);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Sort by:";
             // 
             // ViewTab
             // 
@@ -131,6 +161,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 499);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbSort);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.btnSearch);
@@ -156,5 +188,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ComboBox cmbSort;
+        private System.Windows.Forms.Label label2;
     }
 }

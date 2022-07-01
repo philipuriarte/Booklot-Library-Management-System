@@ -104,6 +104,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTab.resx">
       <DependentUpon>AddTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IssueTab.resx">
       <DependentUpon>IssueTab.cs</DependentUpon>
