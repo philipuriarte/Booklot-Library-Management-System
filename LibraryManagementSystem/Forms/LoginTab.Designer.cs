@@ -143,14 +143,14 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Book", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(121, 79);
+            this.label4.Location = new System.Drawing.Point(134, 59);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.label4.Size = new System.Drawing.Size(519, 86);
+            this.label4.Size = new System.Drawing.Size(519, 108);
             this.label4.TabIndex = 23;
             this.label4.Text = "Booklot Library Login";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

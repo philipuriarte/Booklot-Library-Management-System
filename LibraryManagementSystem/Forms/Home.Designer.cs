@@ -42,13 +42,13 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.label1.Size = new System.Drawing.Size(778, 79);
+            this.label1.Size = new System.Drawing.Size(778, 100);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to Booklot Library";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,8 +56,8 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.BackColor = System.Drawing.Color.Linen;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(251, 183);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(280, 57);
@@ -70,8 +70,8 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.BackColor = System.Drawing.Color.Linen;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(251, 246);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(280, 57);
@@ -85,8 +85,8 @@
             // 
             this.btnView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnView.BackColor = System.Drawing.Color.Linen;
+            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnView.Location = new System.Drawing.Point(251, 120);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(280, 57);
@@ -99,22 +99,22 @@
             // btnIssue
             // 
             this.btnIssue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnIssue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.BackColor = System.Drawing.Color.Linen;
+            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.Location = new System.Drawing.Point(251, 309);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(280, 57);
             this.btnIssue.TabIndex = 4;
             this.btnIssue.TabStop = false;
-            this.btnIssue.Text = "Issue book to student";
+            this.btnIssue.Text = "Issue book";
             this.btnIssue.UseVisualStyleBackColor = false;
             this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // btnReturn
             // 
             this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.BackColor = System.Drawing.Color.Linen;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.Location = new System.Drawing.Point(251, 372);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(280, 57);
