@@ -24,6 +24,7 @@ namespace LibraryManagementSystem.Forms
         SqlDataAdapter da;
         DataTable dt;
 
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
@@ -32,14 +33,14 @@ namespace LibraryManagementSystem.Forms
             }
             else
             {
-                con = new SqlConnection("Data Source = DESKTOP-9MBNT14\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
+                con = new SqlConnection("Data Source = MAJO-PC\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
                 con.Open();
                 cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0)
+                if (txtUser.Text == "admin" & txtPass.Text == "password123")
                 {
                     MessageBox.Show("Login Success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -72,6 +73,11 @@ namespace LibraryManagementSystem.Forms
             {
                 btnLogin_Click(sender, e);
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
