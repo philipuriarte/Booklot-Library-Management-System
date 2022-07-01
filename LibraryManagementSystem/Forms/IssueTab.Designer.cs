@@ -47,7 +47,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Gadugi", 28.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
@@ -91,10 +91,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(33, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 22;
             this.label5.Text = "Issued to:";
             // 
@@ -118,11 +119,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 109);
+            this.label3.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 107);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label3.Size = new System.Drawing.Size(161, 49);
+            this.label3.Size = new System.Drawing.Size(155, 47);
             this.label3.TabIndex = 3;
             this.label3.Text = "Library ID:";
             // 
@@ -130,11 +131,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(30, 40, 10, 40);
-            this.label2.Size = new System.Drawing.Size(144, 109);
+            this.label2.Size = new System.Drawing.Size(135, 107);
             this.label2.TabIndex = 2;
             this.label2.Text = "Book ID:";
             // 
@@ -142,11 +143,12 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.BackColor = System.Drawing.Color.Coral;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(113, 157);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(226, 16);
+            this.label7.Size = new System.Drawing.Size(264, 16);
             this.label7.TabIndex = 21;
             this.label7.Text = "Enter book ID and student\'s library ID";
             // 
@@ -154,13 +156,14 @@
             // 
             this.btnIssue.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnIssue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnIssue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.BackColor = System.Drawing.Color.Coral;
+            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.ForeColor = System.Drawing.Color.Transparent;
             this.btnIssue.Location = new System.Drawing.Point(221, 398);
             this.btnIssue.Name = "btnIssue";
-            this.btnIssue.Size = new System.Drawing.Size(150, 57);
+            this.btnIssue.Size = new System.Drawing.Size(160, 57);
             this.btnIssue.TabIndex = 4;
-            this.btnIssue.Text = "Issue Book";
+            this.btnIssue.Text = "ISSUE BOOK";
             this.btnIssue.UseVisualStyleBackColor = false;
             this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
@@ -168,13 +171,14 @@
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(415, 398);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 57);
+            this.btnClear.Size = new System.Drawing.Size(153, 57);
             this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
