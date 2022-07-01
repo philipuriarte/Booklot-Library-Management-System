@@ -68,11 +68,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(30, 40, 10, 10);
-            this.label2.Size = new System.Drawing.Size(144, 79);
+            this.label2.Size = new System.Drawing.Size(135, 77);
             this.label2.TabIndex = 2;
             this.label2.Text = "Book ID:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -140,11 +140,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 226);
+            this.label6.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 218);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label6.Size = new System.Drawing.Size(178, 49);
+            this.label6.Size = new System.Drawing.Size(172, 47);
             this.label6.TabIndex = 6;
             this.label6.Text = "Publication:";
             // 
@@ -152,11 +152,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 177);
+            this.label5.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 171);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label5.Size = new System.Drawing.Size(134, 49);
+            this.label5.Size = new System.Drawing.Size(129, 47);
             this.label5.TabIndex = 5;
             this.label5.Text = "Edition:";
             // 
@@ -164,11 +164,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 128);
+            this.label4.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 124);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label4.Size = new System.Drawing.Size(128, 49);
+            this.label4.Size = new System.Drawing.Size(127, 47);
             this.label4.TabIndex = 4;
             this.label4.Text = "Author:";
             // 
@@ -176,11 +176,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 79);
+            this.label3.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 77);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label3.Size = new System.Drawing.Size(107, 49);
+            this.label3.Size = new System.Drawing.Size(101, 47);
             this.label3.TabIndex = 3;
             this.label3.Text = "Title:";
             // 
@@ -190,6 +190,7 @@
             this.btnSubmit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSubmit.BackColor = System.Drawing.Color.Coral;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSubmit.Location = new System.Drawing.Point(221, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 57);
@@ -231,7 +232,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.BackColor = System.Drawing.Color.Coral;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(112, 95);
