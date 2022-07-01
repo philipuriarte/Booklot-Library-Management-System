@@ -128,16 +128,16 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.Coral;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(0, 442);
+            this.label2.Location = new System.Drawing.Point(0, 472);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(778, 57);
+            this.label2.Size = new System.Drawing.Size(778, 27);
             this.label2.TabIndex = 6;
-            this.label2.Text = "© Copyright 2022 Booklot Library";
+            this.label2.Text = "© Copyright 2022 Booklot Public Library";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
