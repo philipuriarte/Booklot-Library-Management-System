@@ -84,14 +84,15 @@ namespace LibraryManagementSystem
             }            
         }
 
+        // Incomplete. Currently in testing.
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSort.SelectedIndex == 0)
-                MessageBox.Show("Alphabetical");
+                MessageBox.Show("You chose Alphabetical");
             if (cmbSort.SelectedIndex == 1)
-                MessageBox.Show("Book ID");
+                MessageBox.Show("You chose Book ID");
             if (cmbSort.SelectedIndex == 2)
-                MessageBox.Show("Genre");
+                MessageBox.Show("You chose Genre");
         }
     }
 }
