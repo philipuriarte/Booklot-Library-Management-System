@@ -91,12 +91,34 @@ namespace LibraryManagementSystem
         // Sort feature incomplete. Currently in testing.
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con.Open();
+
+            // Sort Title in alphabetical order
             if (cmbSort.SelectedIndex == 0)
-                MessageBox.Show("You chose Alphabetical");
-            if (cmbSort.SelectedIndex == 1)
-                MessageBox.Show("You chose Book ID");
-            if (cmbSort.SelectedIndex == 2)
-                MessageBox.Show("You chose Genre");
+            {
+                string cmdText = "SELECT * FROM booksData ORDER BY Title";
+                cmd = new SqlCommand(cmdText, con);
+            }
+            // Sort BookID in ascending order
+            else if (cmbSort.SelectedIndex == 1)
+            {
+                string cmdText = "SELECT * FROM booksData ORDER BY BookID";
+                cmd = new SqlCommand(cmdText, con);
+            }
+            // Sort Genre in alphabetical order. Not useful atm.
+            else if (cmbSort.SelectedIndex == 2)
+            {
+                string cmdText = "SELECT * FROM booksData ORDER BY Genre";
+                cmd = new SqlCommand(cmdText, con);
+            }
+
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            dgvBooks.DataSource = dt;
+            con.Close();
         }
     }
 }
