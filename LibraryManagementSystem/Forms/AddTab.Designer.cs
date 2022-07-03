@@ -118,7 +118,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(194, 77);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(316, 34);
-            this.txtAuthor.TabIndex = 3;
+            this.txtAuthor.TabIndex = 2;
             // 
             // txtTitle
             // 
@@ -126,7 +126,7 @@
             this.txtTitle.Location = new System.Drawing.Point(194, 32);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(316, 34);
-            this.txtTitle.TabIndex = 2;
+            this.txtTitle.TabIndex = 1;
             // 
             // label6
             // 
@@ -249,7 +249,7 @@
             this.cmbGenre.Location = new System.Drawing.Point(194, 127);
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size(316, 28);
-            this.cmbGenre.TabIndex = 7;
+            this.cmbGenre.TabIndex = 3;
             // 
             // AddTab
             // 

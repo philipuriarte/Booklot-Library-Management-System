@@ -19,8 +19,8 @@ namespace LibraryManagementSystem
         }
         SqlConnection con;
         SqlCommand cmd;
-        SqlDataAdapter da;
 
+        // Public variable used for BookID
         public static int bookID = 1;
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,9 +52,9 @@ namespace LibraryManagementSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {   
             // Checks if any txtBoxes are empty
-            if (String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
+            if (String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(cmbGenre.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
             {
-                MessageBox.Show("Please fill up all the textboxes.");
+                MessageBox.Show("Please fill up all the boxes.");
             }
             else
             {
@@ -90,6 +90,7 @@ namespace LibraryManagementSystem
 
                 btnClear_Click(sender, e);
 
+                // Everytime a book is added the value of book is increased by 1 to make each ID unique
                 bookID += 1;
             }            
         }
