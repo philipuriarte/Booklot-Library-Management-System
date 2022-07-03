@@ -46,16 +46,29 @@ namespace LibraryManagementSystem
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
-            // checks if input in txtSearch is an integer value
-            if (int.TryParse(txtSearch.Text, out int id))
+        {            
+            // checks if txtSearch is empty
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                ViewTab_Load(sender, e);
+            }
+            else
             {
                 con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
                 string searchText = txtSearch.Text;
 
-                string cmdText = "SELECT BookID, Title, Author, Edition, Publication, Status FROM booksData WHERE BookID = '" + searchText + "'";
-                cmd = new SqlCommand(cmdText, con);
+                // checks if input in txtSearch is an integer value
+                if (int.TryParse(txtSearch.Text, out int id))
+                {
+                    string cmdTextInt = "SELECT * FROM booksData WHERE BookID = '" + searchText + "'";
+                    cmd = new SqlCommand(cmdTextInt, con);
+                }
+                else
+                {
+                    string cmdTextStr = "SELECT * FROM booksData WHERE Title = '" + searchText + "' OR Author = '" + searchText + "' OR Genre = '" + searchText + "' OR Edition = '" + searchText + "' OR Publication = '" + searchText + "'";
+                    cmd = new SqlCommand(cmdTextStr, con);
+                }
 
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -63,15 +76,6 @@ namespace LibraryManagementSystem
                 dt.Load(dr);
                 dgvBooks.DataSource = dt;
                 con.Close();
-            }
-            // checks if txtSearch is empty
-            else if (String.IsNullOrEmpty(txtSearch.Text))
-            {
-                ViewTab_Load(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Please enter Book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }            
         }
 
@@ -84,7 +88,7 @@ namespace LibraryManagementSystem
             }            
         }
 
-        // Incomplete. Currently in testing.
+        // Sort feature incomplete. Currently in testing.
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSort.SelectedIndex == 0)
