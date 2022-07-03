@@ -21,7 +21,7 @@ namespace LibraryManagementSystem
         SqlCommand cmd;
         SqlDataAdapter da;
 
-        public static int bookID = 0;
+        public static int bookID = 1;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,6 @@ namespace LibraryManagementSystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtBookID.Clear();
             txtTitle.Clear();
             txtAuthor.Clear();
             txtEdition.Clear();
@@ -53,55 +52,45 @@ namespace LibraryManagementSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {   
             // Checks if any txtBoxes are empty
-            if (String.IsNullOrEmpty(txtBookID.Text) || String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
+            if (String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
             {
                 MessageBox.Show("Please fill up all the textboxes.");
             }
             else
             {
-                // Checks if input in txtBookID is an integer value
-                if (int.TryParse(txtBookID.Text, out int id))
-                {
-                    con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-                    con.Open();
+                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con.Open();
 
-                    int bookID = Convert.ToInt32(txtBookID.Text);
-                    string title = txtTitle.Text;
-                    string author = txtAuthor.Text;
-                    // Placeholder for txtGenre.Text
-                    string genre = "Genre";
-                    string edition = txtEdition.Text;
-                    string publication = txtPublication.Text;
+                string title = txtTitle.Text;
+                string author = txtAuthor.Text;
+                string genre = "Undefined";
+                string edition = txtEdition.Text;
+                string publication = txtPublication.Text;
 
-                    string cmdText1 = "SELECT * FROM booksData WHERE BookID = '" + txtBookID.Text + "'";
-                    cmd = new SqlCommand(cmdText1, con);
-                    cmd.ExecuteNonQuery();
+                // Sets value of genre variable. Incomplete, need to define all genres first in the library.
+                if (cmbGenre.SelectedIndex == 0)
+                    genre = "Fantasy";
+                else if (cmbGenre.SelectedIndex == 1)
+                    genre = "Science Fiction";
+                else if (cmbGenre.SelectedIndex == 2)
+                    genre = "Romance";
+                else if (cmbGenre.SelectedIndex == 3)
+                    genre = "Comedy";
+                else if (cmbGenre.SelectedIndex == 4)
+                    genre = "Classic";
+                else if (cmbGenre.SelectedIndex == 5)
+                    genre = "History";
 
-                    DataTable dt = new DataTable();
-                    da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
+                string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                cmd = new SqlCommand(cmdText, con);
+                cmd.ExecuteNonQuery();
 
-                    // Checks if bookID is already taken in the database
-                    if (dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Book ID already exists. Please choose another one.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        string cmdText2 = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
-                        cmd = new SqlCommand(cmdText2, con);
-                        cmd.ExecuteNonQuery();
+                MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
 
-                        MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        con.Close();
+                btnClear_Click(sender, e);
 
-                        btnClear_Click(sender, e);
-                    }                    
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a number for the book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                bookID += 1;
             }            
         }
     }

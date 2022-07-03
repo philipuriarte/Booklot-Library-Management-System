@@ -36,7 +36,6 @@
             this.txtEdition = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtBookID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,20 +72,20 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(30, 40, 10, 10);
-            this.label2.Size = new System.Drawing.Size(135, 77);
+            this.label2.Size = new System.Drawing.Size(101, 77);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Book ID:";
+            this.label2.Text = "Title:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Linen;
+            this.panel1.Controls.Add(this.cmbGenre);
             this.panel1.Controls.Add(this.txtPublication);
             this.panel1.Controls.Add(this.txtEdition);
             this.panel1.Controls.Add(this.txtAuthor);
             this.panel1.Controls.Add(this.txtTitle);
-            this.panel1.Controls.Add(this.txtBookID);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -115,7 +115,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(194, 130);
+            this.txtAuthor.Location = new System.Drawing.Point(194, 77);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(316, 34);
             this.txtAuthor.TabIndex = 3;
@@ -123,18 +123,10 @@
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(194, 80);
+            this.txtTitle.Location = new System.Drawing.Point(194, 32);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(316, 34);
             this.txtTitle.TabIndex = 2;
-            // 
-            // txtBookID
-            // 
-            this.txtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookID.Location = new System.Drawing.Point(194, 34);
-            this.txtBookID.Name = "txtBookID";
-            this.txtBookID.Size = new System.Drawing.Size(316, 34);
-            this.txtBookID.TabIndex = 1;
             // 
             // label6
             // 
@@ -168,9 +160,9 @@
             this.label4.Location = new System.Drawing.Point(0, 124);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label4.Size = new System.Drawing.Size(127, 47);
+            this.label4.Size = new System.Drawing.Size(118, 47);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Author:";
+            this.label4.Text = "Genre:";
             // 
             // label3
             // 
@@ -180,9 +172,9 @@
             this.label3.Location = new System.Drawing.Point(0, 77);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label3.Size = new System.Drawing.Size(101, 47);
+            this.label3.Size = new System.Drawing.Size(127, 47);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Title:";
+            this.label3.Text = "Author:";
             // 
             // btnSubmit
             // 
@@ -241,6 +233,24 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Enter book details to add in database";
             // 
+            // cmbGenre
+            // 
+            this.cmbGenre.AllowDrop = true;
+            this.cmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Items.AddRange(new object[] {
+            "Fantasy",
+            "Science Fiction",
+            "Romance",
+            "Comedy",
+            "Classic",
+            "History"});
+            this.cmbGenre.Location = new System.Drawing.Point(194, 127);
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size(316, 28);
+            this.cmbGenre.TabIndex = 7;
+            // 
             // AddTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,7 +281,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtBookID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -284,5 +293,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbGenre;
     }
 }
