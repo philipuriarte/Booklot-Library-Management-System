@@ -44,8 +44,9 @@ namespace LibraryManagementSystem.Forms
                 // Checks if any entered username and password is correct/within the database
                 // Revert if condition back to "if (dt.Rows.Count > 0)" later
                 // Changed username and pass to "a" for faster testing
-                if (txtUser.Text == "a" & txtPass.Text == "a")
+                if (dt.Rows.Count > 0)
                 {
+                    MessageBox.Show("Login Success", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     Home newTab = new Home();
                     newTab.ShowDialog();
