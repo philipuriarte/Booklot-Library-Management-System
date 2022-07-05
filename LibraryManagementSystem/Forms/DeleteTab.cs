@@ -18,7 +18,7 @@ namespace LibraryManagementSystem
             InitializeComponent();
         }
         SqlConnection con;
-        SqlCommand cmd;
+        SqlCommand cmd, cmd0;
         SqlDataAdapter da;
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -31,17 +31,45 @@ namespace LibraryManagementSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-            con.Open();
-            int bookID = Convert.ToInt32(txtBookID.Text);
+            if (String.IsNullOrEmpty(txtBookID.Text))
+            {
+                MessageBox.Show("Please enter a Book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                con = new SqlConnection("Data Source=LAPTOP-SBHT2OEG\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con.Open();
+                int bookID = Convert.ToInt32(txtBookID.Text);
+                bool idExist = false;
 
-            cmd = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
-            cmd.ExecuteNonQuery();
+                cmd = new SqlCommand("SELECT * FROM booksData", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader[0].ToString() == txtBookID.Text)
+                    {
+                        idExist = true;
+                        break;
+                    }
+                }
+                if (idExist == true)
+                {
+                    con.Close();
+                    con.Open();
 
-            MessageBox.Show("Successfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.Close();
-
-            txtBookID.Clear();
+                    cmd0 = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
+                    cmd0.ExecuteNonQuery();
+                    MessageBox.Show("Succesfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
+                    txtBookID.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Book ID: " + bookID + " does not exist. Please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
+                    txtBookID.Clear();
+                }
+            }
         }
     }
 }
