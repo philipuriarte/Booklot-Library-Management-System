@@ -18,7 +18,7 @@ namespace LibraryManagementSystem
             InitializeComponent();
         }
         SqlConnection con;
-        SqlCommand cmd, cmd0;
+        SqlCommand cmd, cmd0, cmdT, cmdA, cmdG, cmdE, cmdP;
         SqlDataAdapter da;
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -43,6 +43,22 @@ namespace LibraryManagementSystem
                 bool idExist = false;
 
                 cmd = new SqlCommand("SELECT * FROM booksData", con);
+
+                cmdT = new SqlCommand("SELECT Title FROM booksData WHERE BookID = '" + bookID + "'", con);
+                var title = cmdT.ExecuteScalar();
+
+                cmdA = new SqlCommand("SELECT Author FROM booksData WHERE BookID = '" + bookID + "'", con);
+                var author = cmdA.ExecuteScalar();
+
+                cmdG = new SqlCommand("SELECT Genre FROM booksData WHERE BookID = '" + bookID + "'", con);
+                var genre = cmdG.ExecuteScalar();
+
+                cmdE = new SqlCommand("SELECT Edition FROM booksData WHERE BookID = '" + bookID + "'", con);
+                var edition = cmdE.ExecuteScalar();
+
+                cmdP = new SqlCommand("SELECT Publication FROM booksData WHERE BookID = '" + bookID + "'", con);
+                var pub = cmdP.ExecuteScalar();
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -57,11 +73,15 @@ namespace LibraryManagementSystem
                     con.Close();
                     con.Open();
 
-                    cmd0 = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
-                    cmd0.ExecuteNonQuery();
-                    MessageBox.Show("Succesfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
-                    txtBookID.Clear();
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete Book with book ID: " + bookID + " ? \n Title: " + title + "\n Author: " + author + "\n Genre: " + genre + "\n Edition: " + edition + "\n Publication: " + pub, "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        cmd0 = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
+                        cmd0.ExecuteNonQuery();
+                        MessageBox.Show("Succesfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
+                        txtBookID.Clear();
+                    }
                 }
                 else
                 {
