@@ -35,6 +35,7 @@ namespace LibraryManagementSystem
         {
             txtTitle.Clear();
             txtAuthor.Clear();
+            cmbGenre.SelectedItem = null;
             txtEdition.Clear();
             txtPublication.Clear();
         }
