@@ -32,7 +32,8 @@ namespace LibraryManagementSystem
         // Loads the database to dataGrid when ViewTab form is launched
         private void ViewTab_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            this.ActiveControl = dgvBooks;
+            con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM booksData", con);
@@ -45,16 +46,34 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Enter text")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Enter text";
+                txtSearch.ForeColor= Color.Gray;
+            }
+        }
         private void btnSearch_Click(object sender, EventArgs e)
-        {            
+        {   
             // checks if txtSearch is empty
             if (String.IsNullOrEmpty(txtSearch.Text))
             {
+                MessageBox.Show("Field is empty. Try again.", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ViewTab_Load(sender, e);
             }
             else
             {
-                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
                 string searchText = txtSearch.Text;
 
@@ -76,6 +95,8 @@ namespace LibraryManagementSystem
                 dt.Load(dr);
                 dgvBooks.DataSource = dt;
                 con.Close();
+                txtSearch.Text = "Enter text";
+                txtSearch.ForeColor = Color.Gray;
             }            
         }
 
@@ -91,7 +112,7 @@ namespace LibraryManagementSystem
         // Sort feature incomplete. Currently in testing.
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             // Sort Title in alphabetical order
