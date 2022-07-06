@@ -23,16 +23,6 @@ namespace LibraryManagementSystem
         // Public variable used for BookID
         public static int bookID = 1;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
