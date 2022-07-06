@@ -66,9 +66,9 @@ namespace LibraryManagementSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {   
             // checks if txtSearch is empty
-            if (String.IsNullOrEmpty(txtSearch.Text))
+            if (txtSearch.Text == "Enter text")
             {
-                MessageBox.Show("Field is empty. Try again.", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Field is empty. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewTab_Load(sender, e);
             }
             else
@@ -89,15 +89,27 @@ namespace LibraryManagementSystem
                     cmd = new SqlCommand(cmdTextStr, con);
                 }
 
+                
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(dr);
                 dgvBooks.DataSource = dt;
+
+                //Check if search key is not found and display error message.
+                if (dt != null)
+                {
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                
                 con.Close();
-                txtSearch.Text = "Enter text";
-                txtSearch.ForeColor = Color.Gray;
-            }            
+            }
+            //reset searchbox text to placeholder
+            txtSearch.Text = "Enter text";
+            txtSearch.ForeColor = Color.Gray;
         }
 
         // Checks if the user pressed enter in txtSearch
