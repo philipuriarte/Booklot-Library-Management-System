@@ -46,6 +46,8 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
+        //As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
+        // When the user clicks on the textbox, the placeholder will automatically be deleted.
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Enter text")
@@ -55,6 +57,7 @@ namespace LibraryManagementSystem
             }
         }
 
+        //When the textbox is not in focus and is empty, the placeholder will be present again.
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -64,9 +67,9 @@ namespace LibraryManagementSystem
             }
         }
         private void btnSearch_Click(object sender, EventArgs e)
-        {   
+        {
             // checks if txtSearch is empty
-            if (txtSearch.Text == "Enter text")
+            if (txtSearch.Text == "Enter text" || String.IsNullOrEmpty(txtSearch.Text))
             {
                 MessageBox.Show("Field is empty. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewTab_Load(sender, e);
@@ -102,14 +105,12 @@ namespace LibraryManagementSystem
                     if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ViewTab_Load(sender, e); //reload the forms immediately
                     }
                 }
                 
                 con.Close();
             }
-            //reset searchbox text to placeholder
-            txtSearch.Text = "Enter text";
-            txtSearch.ForeColor = Color.Gray;
         }
 
         // Checks if the user pressed enter in txtSearch
