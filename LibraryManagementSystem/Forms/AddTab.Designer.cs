@@ -106,7 +106,11 @@
             "Romance",
             "Comedy",
             "Classic",
-            "History"});
+            "History",
+            "Science",
+            "Computers & Software",
+            "Biographies & Autobiographies",
+            "Religion/Philosophy"});
             this.cmbGenre.Location = new System.Drawing.Point(194, 127);
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size(316, 28);
