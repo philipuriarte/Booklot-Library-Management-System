@@ -92,7 +92,6 @@ namespace LibraryManagementSystem
                     cmd = new SqlCommand(cmdTextStr, con);
                 }
 
-                
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -105,10 +104,13 @@ namespace LibraryManagementSystem
                     if (dt.Rows.Count == 0)
                     {
                         MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ViewTab_Load(sender, e); //reload the forms immediately
+                        //reload the forms immediately
+                        ViewTab_Load(sender, e); 
+                        //Reset textbox when error is encountered
+                        txtSearch.Text = "Enter text";
+                        txtSearch.ForeColor = Color.Gray;
                     }
                 }
-                
                 con.Close();
             }
         }
