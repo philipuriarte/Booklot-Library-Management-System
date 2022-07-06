@@ -21,6 +21,7 @@ namespace LibraryManagementSystem
         SqlCommand cmd;
         SqlDataAdapter da;
 
+        // Closes ViewTab form and launches Home form
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -32,7 +33,9 @@ namespace LibraryManagementSystem
         // Loads the database to dataGrid when ViewTab form is launched
         private void ViewTab_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            // Focus on datagrid because focusing on searchbox removes the appeal of placeholder
+            this.ActiveControl = dgvBooks;
+            con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM booksData", con);
@@ -45,20 +48,42 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {            
-            // checks if txtSearch is empty
-            if (String.IsNullOrEmpty(txtSearch.Text))
+        // As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
+        // When the user clicks on the textbox, the placeholder will automatically be deleted
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Enter text")
             {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        // When the textbox is not in focus and is empty, the placeholder will be present again
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Enter text";
+                txtSearch.ForeColor= Color.Gray;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Checks if txtSearch is empty
+            if (txtSearch.Text == "Enter text" || String.IsNullOrEmpty(txtSearch.Text))
+            {
+                MessageBox.Show("Field is empty. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewTab_Load(sender, e);
             }
             else
             {
-                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
                 string searchText = txtSearch.Text;
 
-                // checks if input in txtSearch is an integer value
+                // Checks if input in txtSearch is an integer value
                 if (int.TryParse(txtSearch.Text, out int id))
                 {
                     string cmdTextInt = "SELECT * FROM booksData WHERE BookID = '" + searchText + "'";
@@ -75,8 +100,16 @@ namespace LibraryManagementSystem
                 DataTable dt = new DataTable();
                 dt.Load(dr);
                 dgvBooks.DataSource = dt;
+
+                // Checks if search key is not found and displays error message
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Reload the forms immediately
+                    ViewTab_Load(sender, e);
+                }
                 con.Close();
-            }            
+            }
         }
 
         // Checks if the user pressed enter in txtSearch
@@ -88,10 +121,10 @@ namespace LibraryManagementSystem
             }            
         }
 
-        // Sort feature incomplete. Currently in testing.
+        // Sort feature incomplete, currently in testing
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             // Sort Title in alphabetical order
