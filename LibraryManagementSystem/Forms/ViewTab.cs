@@ -21,6 +21,7 @@ namespace LibraryManagementSystem
         SqlCommand cmd;
         SqlDataAdapter da;
 
+        // Closes ViewTab form and launches Home form
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -32,7 +33,7 @@ namespace LibraryManagementSystem
         // Loads the database to dataGrid when ViewTab form is launched
         private void ViewTab_Load(object sender, EventArgs e)
         {
-            //focus on datagrid because focusing on searchbox removes the appeal of placeholder
+            // Focus on datagrid because focusing on searchbox removes the appeal of placeholder
             this.ActiveControl = dgvBooks;
             con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
@@ -47,8 +48,8 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
-        //As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
-        // When the user clicks on the textbox, the placeholder will automatically be deleted.
+        // As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
+        // When the user clicks on the textbox, the placeholder will automatically be deleted
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Enter text")
@@ -58,7 +59,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        //When the textbox is not in focus and is empty, the placeholder will be present again.
+        // When the textbox is not in focus and is empty, the placeholder will be present again
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -67,9 +68,10 @@ namespace LibraryManagementSystem
                 txtSearch.ForeColor= Color.Gray;
             }
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // checks if txtSearch is empty
+            // Checks if txtSearch is empty
             if (txtSearch.Text == "Enter text" || String.IsNullOrEmpty(txtSearch.Text))
             {
                 MessageBox.Show("Field is empty. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,7 +83,7 @@ namespace LibraryManagementSystem
                 con.Open();
                 string searchText = txtSearch.Text;
 
-                // checks if input in txtSearch is an integer value
+                // Checks if input in txtSearch is an integer value
                 if (int.TryParse(txtSearch.Text, out int id))
                 {
                     string cmdTextInt = "SELECT * FROM booksData WHERE BookID = '" + searchText + "'";
@@ -99,11 +101,11 @@ namespace LibraryManagementSystem
                 dt.Load(dr);
                 dgvBooks.DataSource = dt;
 
-                //Check if search key is not found and display error message.
+                // Checks if search key is not found and displays error message
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //reload the forms immediately
+                    // Reload the forms immediately
                     ViewTab_Load(sender, e);
                 }
                 con.Close();
@@ -119,7 +121,7 @@ namespace LibraryManagementSystem
             }            
         }
 
-        // Sort feature incomplete. Currently in testing.
+        // Sort feature incomplete, currently in testing
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
