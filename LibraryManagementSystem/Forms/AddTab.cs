@@ -45,7 +45,7 @@ namespace LibraryManagementSystem
             // Checks if any txtBoxes are empty
             if (String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(cmbGenre.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
             {
-                MessageBox.Show("Please fill up all the boxes.");
+                MessageBox.Show("Please fill up all the boxes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
