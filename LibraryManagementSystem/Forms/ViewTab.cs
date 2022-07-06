@@ -105,10 +105,7 @@ namespace LibraryManagementSystem
                     {
                         MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //reload the forms immediately
-                        ViewTab_Load(sender, e); 
-                        //Reset textbox when error is encountered
-                        txtSearch.Text = "Enter text";
-                        txtSearch.ForeColor = Color.Gray;
+                        ViewTab_Load(sender, e);
                     }
                 }
                 con.Close();
