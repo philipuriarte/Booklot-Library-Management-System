@@ -32,6 +32,7 @@ namespace LibraryManagementSystem
         // Loads the database to dataGrid when ViewTab form is launched
         private void ViewTab_Load(object sender, EventArgs e)
         {
+            //focus on datagrid because focusing on searchbox removes the appeal of placeholder
             this.ActiveControl = dgvBooks;
             con = new SqlConnection("Data Source=MAJO-PC\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
@@ -99,14 +100,11 @@ namespace LibraryManagementSystem
                 dgvBooks.DataSource = dt;
 
                 //Check if search key is not found and display error message.
-                if (dt != null)
+                if (dt.Rows.Count == 0)
                 {
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //reload the forms immediately
-                        ViewTab_Load(sender, e);
-                    }
+                    MessageBox.Show("Search key not found. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //reload the forms immediately
+                    ViewTab_Load(sender, e);
                 }
                 con.Close();
             }
