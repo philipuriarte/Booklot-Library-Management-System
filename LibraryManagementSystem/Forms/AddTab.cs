@@ -95,10 +95,19 @@ namespace LibraryManagementSystem
             }            
         }
 
+        // As the form loads, "Please select..." is automatically in cmbGenre.Text as a placeholder
+        // When the user clicks on the combobox, the placeholder will automatically be deleted
         private void cmbGenre_Enter(object sender, EventArgs e)
         {
             if (cmbGenre.Text == "Please select...")
                 cmbGenre.Text = "";
+        }
+
+        // When the textbox is not in focus and is empty, the placeholder will be present again
+        private void cmbGenre_Leave(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "")
+                cmbGenre.Text = "Please select...";
         }
     }
 }

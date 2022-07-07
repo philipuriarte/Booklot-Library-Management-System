@@ -117,6 +117,7 @@
             this.cmbGenre.TabIndex = 3;
             this.cmbGenre.Text = "Please select...";
             this.cmbGenre.Enter += new System.EventHandler(this.cmbGenre_Enter);
+            this.cmbGenre.Leave += new System.EventHandler(this.cmbGenre_Leave);
             // 
             // txtPublication
             // 
