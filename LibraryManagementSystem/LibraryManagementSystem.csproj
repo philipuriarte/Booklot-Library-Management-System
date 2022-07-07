@@ -55,6 +55,12 @@
     <Compile Include="Forms\DeleteTab.Designer.cs">
       <DependentUpon>DeleteTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageTab.Designer.cs">
+      <DependentUpon>ManageTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IssueTab.resx">
       <DependentUpon>IssueTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageTab.resx">
+      <DependentUpon>ManageTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReturnTab.resx">
       <DependentUpon>ReturnTab.cs</DependentUpon>
