@@ -21,7 +21,7 @@ namespace LibraryManagementSystem.Forms
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
-        int bookID;
+        
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -33,53 +33,35 @@ namespace LibraryManagementSystem.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=LAPTOP-ID3FFBBJ\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-            con.Open();
-            /*
-            int bookID = Convert.ToInt32(txtBookID.Text);
-            string availText = "Avail";
-
-            string cmdText = "UPDATE booksData SET Status = '" + availText + "' WHERE BookID = '" + bookID + "'";
-            cmd = new SqlCommand(cmdText, con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Successfully returned book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.Close();
-
-            txtBookID.Clear();
-            */
-
-            string availText = "Avail";
-
-            if (String.IsNullOrEmpty(txtBookID.Text))
+            if (String.IsNullOrEmpty(txtBookID.Text)) //checks if txtBookID field is empty
             {
-                MessageBox.Show("Please complete all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter Book ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                bookID = Convert.ToInt32(txtBookID.Text);
-                cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                con = new SqlConnection("Data Source=LAPTOP-ID3FFBBJ\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con.Open();
+                string availText = "Avail";
+                int bookID = Convert.ToInt32(txtBookID.Text);
+                cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con); 
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
                 {
-
                     cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "' AND Status = 'avail'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
 
-                    if (dt.Rows.Count > 0)
+                    if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
                     {
                         MessageBox.Show("Book ID" + bookID + " has not been issued and is currently available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtBookID.Clear();
                     }
                     else
-                    {
-                        
-
+                    { 
                         cmd = new SqlCommand("UPDATE booksData SET Status = '" + availText + "' WHERE BookID = '" + bookID + "'", con);
                         cmd.ExecuteNonQuery();
 

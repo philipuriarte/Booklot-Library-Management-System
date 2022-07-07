@@ -17,11 +17,12 @@ namespace LibraryManagementSystem.Forms
         {
             InitializeComponent();
         }
+
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
-        int bookID;
+        
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -38,57 +39,33 @@ namespace LibraryManagementSystem.Forms
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=LAPTOP-ID3FFBBJ\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
-            con.Open();
 
-            /*int bookID = Convert.ToInt32(txtBookID.Text);
-            string libraryID = txtLibraryID.Text;
-            string unavailText = "Borrowed by student library ID: " + libraryID;
-
-            string cmdText = "UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'";
-            cmd = new SqlCommand(cmdText, con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.Close();
-
-            txtBookID.Clear();
-            txtLibraryID.Clear();*/
-
-            string libraryID = txtLibraryID.Text;
-            string unavailText = "Borrowed by student library ID: " + libraryID;
-
-
-            if (String.IsNullOrEmpty(txtBookID.Text) || String.IsNullOrEmpty(txtLibraryID.Text))
+            if (String.IsNullOrEmpty(txtBookID.Text) || String.IsNullOrEmpty(txtLibraryID.Text)) //checks if txtBookID or txtLibraryID fields are empty
             {
                 MessageBox.Show("Please complete all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                bookID = Convert.ToInt32(txtBookID.Text);
+                con = new SqlConnection("Data Source=LAPTOP-ID3FFBBJ\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con.Open();
+
+                int bookID = Convert.ToInt32(txtBookID.Text);
+                string libraryID = txtLibraryID.Text;
+                string unavailText = "Borrowed by member ID: " + libraryID;
+
+                
                 cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
                 {
-                    /*
-                    cmd = new SqlCommand("UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'", con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    con.Close();
-
-                    txtBookID.Clear();
-                    txtLibraryID.Clear();
-                    */
-
                     cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "' AND Status = 'avail'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
 
-                    if (dt.Rows.Count > 0)
+                    if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
                     {
                         cmd = new SqlCommand("UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'", con);
                         cmd.ExecuteNonQuery();
@@ -96,20 +73,16 @@ namespace LibraryManagementSystem.Forms
                         MessageBox.Show("Successfully issued book ID " + bookID + " to member " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();
 
-                        txtBookID.Clear();
-                        txtLibraryID.Clear();
+                        btnClear_Click(sender, e);
                     }
                     else {
                         MessageBox.Show("Book is currently unavailabe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtBookID.Clear();
-                        txtLibraryID.Clear();
+                        btnClear_Click(sender, e);
                     }
-
                 }
                 else {
                     MessageBox.Show("Book ID does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtBookID.Clear();
-                    txtLibraryID.Clear();
+                    btnClear_Click(sender, e);
                 }
             }
         }
