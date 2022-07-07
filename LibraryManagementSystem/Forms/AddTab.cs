@@ -58,7 +58,7 @@ namespace LibraryManagementSystem
                 string edition = txtEdition.Text;
                 string publication = txtPublication.Text;
 
-                // Sets value of genre variable. Incomplete, need to define all genres first in the library.
+                // Sets value of genre variable
                 if (cmbGenre.SelectedIndex == 0)
                     genre = "Fantasy";
                 else if (cmbGenre.SelectedIndex == 1)
@@ -71,6 +71,14 @@ namespace LibraryManagementSystem
                     genre = "Classic";
                 else if (cmbGenre.SelectedIndex == 5)
                     genre = "History";
+                else if (cmbGenre.SelectedIndex == 6)
+                    genre = "Science";
+                else if (cmbGenre.SelectedIndex == 7)
+                    genre = "Computers & Software";
+                else if (cmbGenre.SelectedIndex == 8)
+                    genre = "Biographies & Autobiographies";
+                else if (cmbGenre.SelectedIndex == 9)
+                    genre = "Religion/Philosophy";
 
                 string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                 cmd = new SqlCommand(cmdText, con);
