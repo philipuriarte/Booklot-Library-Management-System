@@ -19,7 +19,6 @@ namespace LibraryManagementSystem
         }
         SqlConnection con;
         SqlCommand cmd, cmd0, cmdT, cmdA, cmdG, cmdE, cmdP;
-        SqlDataAdapter da;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -31,6 +30,7 @@ namespace LibraryManagementSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // checks if the txtBookID is empty
             if (String.IsNullOrEmpty(txtBookID.Text))
             {
                 MessageBox.Show("Please enter a Book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -44,6 +44,7 @@ namespace LibraryManagementSystem
 
                 cmd = new SqlCommand("SELECT * FROM booksData", con);
 
+                // selects value from booksData table in the database with the same bookID as inputted and assigns them to their respective variables
                 cmdT = new SqlCommand("SELECT Title FROM booksData WHERE BookID = '" + bookID + "'", con);
                 var title = cmdT.ExecuteScalar();
 
@@ -62,18 +63,21 @@ namespace LibraryManagementSystem
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    // checks if the reader finds the text in txtBookID in the database
                     if (reader[0].ToString() == txtBookID.Text)
                     {
                         idExist = true;
                         break;
                     }
                 }
+                // checks if the boolean idExist is true
                 if (idExist == true)
                 {
                     con.Close();
                     con.Open();
 
                     DialogResult result = MessageBox.Show("Are you sure you want to delete Book with book ID: " + bookID + " ? \n Title: " + title + "\n Author: " + author + "\n Genre: " + genre + "\n Edition: " + edition + "\n Publication: " + pub, "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    // checks if user chooses the "yes" option in the message box
                     if (result == DialogResult.Yes)
                     {
                         cmd0 = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
