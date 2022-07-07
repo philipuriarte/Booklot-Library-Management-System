@@ -16,5 +16,13 @@ namespace LibraryManagementSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home newTab = new Home();
+            newTab.ShowDialog();
+            this.Close();
+        }
     }
 }

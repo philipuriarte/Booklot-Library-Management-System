@@ -60,6 +60,7 @@
             this.btnBack.Size = new System.Drawing.Size(45, 40);
             this.btnBack.TabIndex = 19;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ManageTab
             // 
