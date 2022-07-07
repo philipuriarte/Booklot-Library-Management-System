@@ -19,9 +19,8 @@ namespace LibraryManagementSystem
         }
         SqlConnection con;
         SqlCommand cmd;
-
-        // Public variable used for BookID
-        public static int bookID = 1;
+        SqlDataAdapter da;
+        DataTable dt;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -52,6 +51,7 @@ namespace LibraryManagementSystem
                 con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
 
+                int bookID = 1;
                 string title = txtTitle.Text;
                 string author = txtAuthor.Text;
                 string genre = "Undefined";
@@ -80,6 +80,24 @@ namespace LibraryManagementSystem
                 else if (cmbGenre.SelectedIndex == 9)
                     genre = "Religion/Philosophy";
 
+                // Variable used to check if current value of bookID exists in database
+                bool idExist = true;                
+
+                // Auto-generation of Book ID
+                while (idExist)
+                {
+                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                    da = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Checks if Book ID exists in database, else increments value of bookID by +1
+                    if (dt.Rows.Count == 0)
+                        idExist = false;
+                    else
+                        bookID += 1;
+                }
+
                 string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                 cmd = new SqlCommand(cmdText, con);
                 cmd.ExecuteNonQuery();
@@ -89,9 +107,6 @@ namespace LibraryManagementSystem
 
                 // Clears the input on all textboxes and the cmbGenre
                 btnClear_Click(sender, e);
-
-                // Everytime a book is added the value of book is increased by 1 to make each ID unique
-                bookID += 1;
             }            
         }
 
