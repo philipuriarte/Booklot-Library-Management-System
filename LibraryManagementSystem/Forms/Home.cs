@@ -68,5 +68,13 @@ namespace LibraryManagementSystem
             newTab.ShowDialog();
             this.Close();
         }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Forms.ManageTab newTab = new Forms.ManageTab();
+            newTab.ShowDialog();
+            this.Close();
+        }
     }
 }
