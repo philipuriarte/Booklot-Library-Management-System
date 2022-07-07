@@ -87,11 +87,18 @@ namespace LibraryManagementSystem
                 MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
 
+                // Clears the input on all textboxes and the cmbGenre
                 btnClear_Click(sender, e);
 
                 // Everytime a book is added the value of book is increased by 1 to make each ID unique
                 bookID += 1;
             }            
+        }
+
+        private void cmbGenre_Enter(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "Please select...")
+                cmbGenre.Text = "";
         }
     }
 }
