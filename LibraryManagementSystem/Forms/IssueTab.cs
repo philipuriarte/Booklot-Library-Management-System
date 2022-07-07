@@ -93,7 +93,7 @@ namespace LibraryManagementSystem.Forms
                         cmd = new SqlCommand("UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'", con);
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Successfully issued book ID " + bookID + " to student " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully issued book ID " + bookID + " to member " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();
 
                         txtBookID.Clear();
