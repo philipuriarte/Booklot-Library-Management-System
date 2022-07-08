@@ -10,8 +10,22 @@ Video Demonstration: TBD
 
 * An SQL database must be created locally using SSMS
   * Create a **DATABASE** named *libraryData* 
-  * Create a **TABLE** named *booksData* with the column names and data type in order: BookID int, Title varchar(50), Author varchar(50), Genre varchar(50), Edition varchar(50), Publication varchar(50), Status varchar(50)
-  * Create a **TABLE** named *loginData* with the column names and data type in order: username varchar(50), password varchar(50)
+    * Code: <kbd>CREATE DATABASE libraryData;</kbd>
+  * Create a **TABLE** named *booksData* with the following column names and data type in order:
+    * BookID INT
+    * Title VARCHAR(50)
+    * Author VARCHAR(50)
+    * Genre VARCHAR(50)
+    * Edition VARCHAR(50)
+    * Publication VARCHAR(50)
+    * Status VARCHAR(50)
+    * DateBorrowed DATE
+    * DateToReturn DATE </br>
+    * Code: <kbd>CREATE TABLE booksData (BookID INT, Title VARCHAR(50), Author VARCHAR(50), Edition VARCHAR(50), Publication VARCHAR(50), Status VARCHAR(50), DateBorrowed DATE, DateToReturn DATE);</kbd>
+  * Create a **TABLE** named *loginData* with the following column names and data type in order:
+    * username VARCHAR(50)
+    * password VARCHAR(50)
+    * Code: <kbd>CREATE TABLE booksData (username VARCHAR(50), password VARCHAR(50));</kbd>
   
 * The code on the Forms must be modified
   * On all lines that are <kbd>con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");</kbd> change the value of "Data Source" <kbd>Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;</kbd> to the name of your local server
