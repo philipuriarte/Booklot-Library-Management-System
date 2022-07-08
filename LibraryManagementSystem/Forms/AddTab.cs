@@ -59,26 +59,39 @@ namespace LibraryManagementSystem
                 string publication = txtPublication.Text;
 
                 // Sets value of genre variable
-                if (cmbGenre.SelectedIndex == 0)
-                    genre = "Fantasy";
-                else if (cmbGenre.SelectedIndex == 1)
-                    genre = "Science Fiction";
-                else if (cmbGenre.SelectedIndex == 2)
-                    genre = "Romance";
-                else if (cmbGenre.SelectedIndex == 3)
-                    genre = "Comedy";
-                else if (cmbGenre.SelectedIndex == 4)
-                    genre = "Classic";
-                else if (cmbGenre.SelectedIndex == 5)
-                    genre = "History";
-                else if (cmbGenre.SelectedIndex == 6)
-                    genre = "Science";
-                else if (cmbGenre.SelectedIndex == 7)
-                    genre = "Computers & Software";
-                else if (cmbGenre.SelectedIndex == 8)
-                    genre = "Biographies & Autobiographies";
-                else if (cmbGenre.SelectedIndex == 9)
-                    genre = "Religion/Philosophy";
+                switch(cmbGenre.SelectedIndex)
+                {
+                    case 0:
+                        genre = "Fantasy";
+                        break;
+                    case 1:
+                        genre = "Science Fiction";
+                        break;
+                    case 2:
+                        genre = "Romance";
+                        break;
+                    case 3:
+                        genre = "Comedy";
+                        break;
+                    case 4:
+                        genre = "Classic";
+                        break;
+                    case 5:
+                        genre = "History";
+                        break;
+                    case 6:
+                        genre = "Science";
+                        break;
+                    case 7:
+                        genre = "Computers & Software";
+                        break;
+                    case 8:
+                        genre = "Biographies & Autobiographies";
+                        break;
+                    case 9:
+                        genre = "Religion & Philosophy";
+                        break;
+                }
 
                 // Variable used to check if current value of bookID exists in database
                 bool idExist = true;                
