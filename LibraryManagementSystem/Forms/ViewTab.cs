@@ -146,8 +146,15 @@ namespace LibraryManagementSystem
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they were borrowed
-
+                case 3:
+                    cmdText = "SELECT * FROM booksData ORDER BY DateBorrowed";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
                 // Sort books by the date they should be returned
+                case 4:
+                    cmdText = "SELECT * FROM booksData ORDER BY DateToReturn";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
             }
 
             SqlDataReader dr;
