@@ -71,6 +71,7 @@
             this.ClientSize = new System.Drawing.Size(778, 499);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageTab";
