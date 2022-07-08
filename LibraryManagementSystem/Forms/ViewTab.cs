@@ -162,5 +162,12 @@ namespace LibraryManagementSystem
                 cmbSort.Text = "";
             cmbSort.DroppedDown = true;
         }
+
+        // When the cmbSort is not in focus and is empty, the placeholder will be present again
+        private void cmbSort_Leave(object sender, EventArgs e)
+        {
+            if (cmbSort.Text == "")
+                cmbSort.Text = "Sort by:";
+        }
     }
 }

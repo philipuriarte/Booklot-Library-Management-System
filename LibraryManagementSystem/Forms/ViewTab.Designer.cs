@@ -145,6 +145,7 @@
             this.cmbSort.Text = "Sort by:";
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             this.cmbSort.Enter += new System.EventHandler(this.cmbSort_Enter);
+            this.cmbSort.Leave += new System.EventHandler(this.cmbSort_Leave);
             // 
             // ViewTab
             // 
