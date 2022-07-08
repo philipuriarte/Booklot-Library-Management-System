@@ -126,24 +126,28 @@ namespace LibraryManagementSystem
         {
             con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
+            string cmdText;
 
-            // Sort Title in alphabetical order
-            if (cmbSort.SelectedIndex == 0)
+            switch (cmbSort.SelectedIndex)
             {
-                string cmdText = "SELECT * FROM booksData ORDER BY Title";
-                cmd = new SqlCommand(cmdText, con);
-            }
-            // Sort BookID in ascending order
-            else if (cmbSort.SelectedIndex == 1)
-            {
-                string cmdText = "SELECT * FROM booksData ORDER BY BookID";
-                cmd = new SqlCommand(cmdText, con);
-            }
-            // Sort Genre in alphabetical order. Not useful atm.
-            else if (cmbSort.SelectedIndex == 2)
-            {
-                string cmdText = "SELECT * FROM booksData ORDER BY Genre";
-                cmd = new SqlCommand(cmdText, con);
+                // Sort Title in alphabetical order
+                case 0:
+                    cmdText = "SELECT * FROM booksData ORDER BY Title";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort Author in alphabetical order
+                case 1:
+                    cmdText = "SELECT * FROM booksData ORDER BY Author";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort BookID in ascending order
+                case 2:
+                    cmdText = "SELECT * FROM booksData ORDER BY BookID";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort books by the date they were borrowed
+
+                // Sort books by the date they should be returned
             }
 
             SqlDataReader dr;
