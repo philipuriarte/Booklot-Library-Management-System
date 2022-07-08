@@ -135,12 +135,14 @@
             this.cmbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
-            "Alphabetical",
+            "Alphabetical: Title",
+            "Alphabetical: Author",
             "Book ID",
-            "Genre"});
-            this.cmbSort.Location = new System.Drawing.Point(98, 51);
+            "Date borrowed",
+            "Date to return"});
+            this.cmbSort.Location = new System.Drawing.Point(88, 51);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(164, 28);
+            this.cmbSort.Size = new System.Drawing.Size(187, 28);
             this.cmbSort.TabIndex = 3;
             this.cmbSort.Text = "Sort by:";
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
