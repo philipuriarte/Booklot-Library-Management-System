@@ -132,7 +132,7 @@ namespace LibraryManagementSystem
             cmbGenre.DroppedDown = true;
         }
 
-        // When the textbox is not in focus and is empty, the placeholder will be present again
+        // When the cmbGenre is not in focus and is empty, the placeholder will be present again
         private void cmbGenre_Leave(object sender, EventArgs e)
         {
             if (cmbGenre.Text == "")
