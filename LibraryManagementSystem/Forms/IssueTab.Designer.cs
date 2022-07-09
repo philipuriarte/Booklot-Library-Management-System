@@ -51,10 +51,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
-            this.label1.Size = new System.Drawing.Size(584, 64);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.label1.Size = new System.Drawing.Size(779, 79);
             this.label1.TabIndex = 2;
             this.label1.Text = "Issue Book";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,10 +65,10 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(21, 26);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(28, 32);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(34, 32);
+            this.btnBack.Size = new System.Drawing.Size(45, 39);
             this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -83,10 +82,10 @@
             this.panel1.Controls.Add(this.txtBookID);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(87, 143);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(116, 176);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 144);
+            this.panel1.Size = new System.Drawing.Size(543, 177);
             this.panel1.TabIndex = 1;
             // 
             // label5
@@ -96,29 +95,28 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(25, 76);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(33, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 22;
             this.label5.Text = "Issued to:";
             // 
             // txtLibraryID
             // 
             this.txtLibraryID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLibraryID.Location = new System.Drawing.Point(146, 89);
-            this.txtLibraryID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLibraryID.Location = new System.Drawing.Point(195, 110);
+            this.txtLibraryID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLibraryID.Name = "txtLibraryID";
-            this.txtLibraryID.Size = new System.Drawing.Size(238, 28);
+            this.txtLibraryID.Size = new System.Drawing.Size(316, 34);
             this.txtLibraryID.TabIndex = 3;
             // 
             // txtBookID
             // 
             this.txtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookID.Location = new System.Drawing.Point(146, 28);
-            this.txtBookID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBookID.Location = new System.Drawing.Point(195, 34);
+            this.txtBookID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBookID.Name = "txtBookID";
-            this.txtBookID.Size = new System.Drawing.Size(238, 28);
+            this.txtBookID.Size = new System.Drawing.Size(316, 34);
             this.txtBookID.TabIndex = 2;
             // 
             // label3
@@ -126,11 +124,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 86);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(0, 105);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(22, 8, 8, 8);
-            this.label3.Size = new System.Drawing.Size(125, 38);
+            this.label3.Padding = new System.Windows.Forms.Padding(29, 10, 11, 10);
+            this.label3.Size = new System.Drawing.Size(155, 47);
             this.label3.TabIndex = 3;
             this.label3.Text = "Library ID:";
             // 
@@ -140,10 +137,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(22, 32, 8, 32);
-            this.label2.Size = new System.Drawing.Size(109, 86);
+            this.label2.Padding = new System.Windows.Forms.Padding(29, 39, 11, 39);
+            this.label2.Size = new System.Drawing.Size(135, 105);
             this.label2.TabIndex = 2;
             this.label2.Text = "Book ID:";
             // 
@@ -154,10 +150,9 @@
             this.label7.BackColor = System.Drawing.Color.Coral;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(85, 128);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(113, 158);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(221, 13);
+            this.label7.Size = new System.Drawing.Size(264, 16);
             this.label7.TabIndex = 21;
             this.label7.Text = "Enter book ID and student\'s library ID";
             // 
@@ -168,10 +163,10 @@
             this.btnIssue.BackColor = System.Drawing.Color.Coral;
             this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIssue.Location = new System.Drawing.Point(166, 323);
-            this.btnIssue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIssue.Location = new System.Drawing.Point(221, 398);
+            this.btnIssue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIssue.Name = "btnIssue";
-            this.btnIssue.Size = new System.Drawing.Size(120, 46);
+            this.btnIssue.Size = new System.Drawing.Size(160, 57);
             this.btnIssue.TabIndex = 4;
             this.btnIssue.Text = "ISSUE BOOK";
             this.btnIssue.UseVisualStyleBackColor = false;
@@ -184,10 +179,10 @@
             this.btnClear.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(311, 323);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Location = new System.Drawing.Point(415, 398);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 46);
+            this.btnClear.Size = new System.Drawing.Size(153, 57);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -195,11 +190,11 @@
             // 
             // IssueTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(584, 405);
+            this.ClientSize = new System.Drawing.Size(779, 498);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.label7);
@@ -208,7 +203,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "IssueTab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booklot Library Management System";
