@@ -37,7 +37,7 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=LAPTOP-SBHT2OEG\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
                 int bookID = Convert.ToInt32(txtBookID.Text);
                 bool idExist = false;
