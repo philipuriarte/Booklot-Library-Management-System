@@ -24,5 +24,10 @@ namespace LibraryManagementSystem.Forms
             newTab.ShowDialog();
             this.Close();
         }
+
+        private void ManageTab_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
