@@ -29,6 +29,7 @@ namespace LibraryManagementSystem.Forms
             this.Close();
         }
 
+        // Loads the SQL members_data table to dataGrid when ManageTab form is launched
         private void ManageTab_Load(object sender, EventArgs e)
         {
             con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
@@ -44,11 +45,13 @@ namespace LibraryManagementSystem.Forms
             con.Close();
         }
 
+        // Loads the SQL members_data table to dataGrid
         private void rbtnMembers_CheckedChanged(object sender, EventArgs e)
         {
             ManageTab_Load(sender, e);
         }
 
+        // Loads the SQL active_transactions table to dataGrid
         private void rbtnTransac_CheckedChanged(object sender, EventArgs e)
         {
             con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
