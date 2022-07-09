@@ -45,7 +45,7 @@ namespace LibraryManagementSystem.Forms
                 MessageBox.Show("Please complete all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                con = new SqlConnection("Data Source=LAPTOP-ID3FFBBJ\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
 
                 int bookID = Convert.ToInt32(txtBookID.Text);
