@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.rbtnMembers = new System.Windows.Forms.RadioButton();
+            this.rbtnTransac = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,14 +75,56 @@
             this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMembers.BackgroundColor = System.Drawing.Color.Linen;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Location = new System.Drawing.Point(43, 103);
+            this.dgvMembers.Location = new System.Drawing.Point(43, 120);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMembers.RowTemplate.Height = 24;
-            this.dgvMembers.Size = new System.Drawing.Size(1095, 549);
+            this.dgvMembers.Size = new System.Drawing.Size(1095, 532);
             this.dgvMembers.TabIndex = 23;
             this.dgvMembers.TabStop = false;
+            // 
+            // rbtnMembers
+            // 
+            this.rbtnMembers.AutoSize = true;
+            this.rbtnMembers.BackColor = System.Drawing.Color.Transparent;
+            this.rbtnMembers.Checked = true;
+            this.rbtnMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbtnMembers.Location = new System.Drawing.Point(114, 92);
+            this.rbtnMembers.Name = "rbtnMembers";
+            this.rbtnMembers.Size = new System.Drawing.Size(104, 26);
+            this.rbtnMembers.TabIndex = 25;
+            this.rbtnMembers.TabStop = true;
+            this.rbtnMembers.Text = "Members";
+            this.rbtnMembers.UseVisualStyleBackColor = false;
+            this.rbtnMembers.CheckedChanged += new System.EventHandler(this.rbtnMembers_CheckedChanged);
+            // 
+            // rbtnTransac
+            // 
+            this.rbtnTransac.AutoSize = true;
+            this.rbtnTransac.BackColor = System.Drawing.Color.Transparent;
+            this.rbtnTransac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnTransac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbtnTransac.Location = new System.Drawing.Point(237, 92);
+            this.rbtnTransac.Name = "rbtnTransac";
+            this.rbtnTransac.Size = new System.Drawing.Size(189, 26);
+            this.rbtnTransac.TabIndex = 26;
+            this.rbtnTransac.Text = "Active Transactions";
+            this.rbtnTransac.UseVisualStyleBackColor = false;
+            this.rbtnTransac.CheckedChanged += new System.EventHandler(this.rbtnTransac_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(48, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 22);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Show:";
             // 
             // ManageTab
             // 
@@ -88,6 +133,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.rbtnTransac);
+            this.Controls.Add(this.rbtnMembers);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
@@ -100,6 +148,7 @@
             this.Load += new System.EventHandler(this.ManageTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +157,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView dgvMembers;
+        private System.Windows.Forms.RadioButton rbtnMembers;
+        private System.Windows.Forms.RadioButton rbtnTransac;
+        private System.Windows.Forms.Label label2;
     }
 }
