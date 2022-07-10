@@ -36,7 +36,6 @@
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cmbSort = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,30 +132,22 @@
             // cmbSort
             // 
             this.cmbSort.AllowDrop = true;
-            this.cmbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
-            "Alphabetical",
+            "Alphabetical: Title",
+            "Alphabetical: Author",
             "Book ID",
-            "Genre"});
-            this.cmbSort.Location = new System.Drawing.Point(165, 51);
+            "Date borrowed",
+            "Date to return"});
+            this.cmbSort.Location = new System.Drawing.Point(88, 51);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(113, 28);
+            this.cmbSort.Size = new System.Drawing.Size(187, 28);
             this.cmbSort.TabIndex = 3;
+            this.cmbSort.Text = "Sort by:";
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(87, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 22);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Sort by:";
+            this.cmbSort.Enter += new System.EventHandler(this.cmbSort_Enter);
+            this.cmbSort.Leave += new System.EventHandler(this.cmbSort_Leave);
             // 
             // ViewTab
             // 
@@ -165,7 +156,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 499);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbSort);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvBooks);
@@ -193,6 +183,5 @@
         private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.ComboBox cmbSort;
-        private System.Windows.Forms.Label label2;
     }
 }

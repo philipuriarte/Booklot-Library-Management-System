@@ -126,24 +126,35 @@ namespace LibraryManagementSystem
         {
             con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
+            string cmdText;
 
-            // Sort Title in alphabetical order
-            if (cmbSort.SelectedIndex == 0)
+            switch (cmbSort.SelectedIndex)
             {
-                string cmdText = "SELECT * FROM booksData ORDER BY Title";
-                cmd = new SqlCommand(cmdText, con);
-            }
-            // Sort BookID in ascending order
-            else if (cmbSort.SelectedIndex == 1)
-            {
-                string cmdText = "SELECT * FROM booksData ORDER BY BookID";
-                cmd = new SqlCommand(cmdText, con);
-            }
-            // Sort Genre in alphabetical order. Not useful atm.
-            else if (cmbSort.SelectedIndex == 2)
-            {
-                string cmdText = "SELECT * FROM booksData ORDER BY Genre";
-                cmd = new SqlCommand(cmdText, con);
+                // Sort Title in alphabetical order
+                case 0:
+                    cmdText = "SELECT * FROM booksData ORDER BY Title";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort Author in alphabetical order
+                case 1:
+                    cmdText = "SELECT * FROM booksData ORDER BY Author";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort BookID in ascending order
+                case 2:
+                    cmdText = "SELECT * FROM booksData ORDER BY BookID";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort books by the date they were borrowed
+                case 3:
+                    cmdText = "SELECT * FROM booksData ORDER BY DateBorrowed";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
+                // Sort books by the date they should be returned
+                case 4:
+                    cmdText = "SELECT * FROM booksData ORDER BY DateToReturn";
+                    cmd = new SqlCommand(cmdText, con);
+                    break;
             }
 
             SqlDataReader dr;
@@ -152,6 +163,22 @@ namespace LibraryManagementSystem
             dt.Load(dr);
             dgvBooks.DataSource = dt;
             con.Close();
+        }
+
+        // As the form loads, "Sort by:" is automatically in cmbSort.Text as a placeholder
+        // When the user clicks on the combobox, the placeholder will automatically be deleted and the list of options will be shown
+        private void cmbSort_Enter(object sender, EventArgs e)
+        {
+            if (cmbSort.Text == "Sort by:")
+                cmbSort.Text = "";
+            cmbSort.DroppedDown = true;
+        }
+
+        // When the cmbSort is not in focus and is empty, the placeholder will be present again
+        private void cmbSort_Leave(object sender, EventArgs e)
+        {
+            if (cmbSort.Text == "")
+                cmbSort.Text = "Sort by:";
         }
     }
 }
