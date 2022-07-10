@@ -19,19 +19,8 @@ namespace LibraryManagementSystem
         }
         SqlConnection con;
         SqlCommand cmd;
-
-        // Public variable used for BookID
-        public static int bookID = 1;
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        SqlDataAdapter da;
+        DataTable dt;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -45,6 +34,7 @@ namespace LibraryManagementSystem
         {
             txtTitle.Clear();
             txtAuthor.Clear();
+            cmbGenre.SelectedItem = null;
             txtEdition.Clear();
             txtPublication.Clear();
         }
@@ -54,32 +44,72 @@ namespace LibraryManagementSystem
             // Checks if any txtBoxes are empty
             if (String.IsNullOrEmpty(txtTitle.Text) || String.IsNullOrEmpty(txtAuthor.Text) || String.IsNullOrEmpty(cmbGenre.Text) || String.IsNullOrEmpty(txtEdition.Text) || String.IsNullOrEmpty(txtPublication.Text))
             {
-                MessageBox.Show("Please fill up all the boxes.");
+                MessageBox.Show("Please fill up all the boxes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
 
+                int bookID = 1;
                 string title = txtTitle.Text;
                 string author = txtAuthor.Text;
                 string genre = "Undefined";
                 string edition = txtEdition.Text;
                 string publication = txtPublication.Text;
 
-                // Sets value of genre variable. Incomplete, need to define all genres first in the library.
-                if (cmbGenre.SelectedIndex == 0)
-                    genre = "Fantasy";
-                else if (cmbGenre.SelectedIndex == 1)
-                    genre = "Science Fiction";
-                else if (cmbGenre.SelectedIndex == 2)
-                    genre = "Romance";
-                else if (cmbGenre.SelectedIndex == 3)
-                    genre = "Comedy";
-                else if (cmbGenre.SelectedIndex == 4)
-                    genre = "Classic";
-                else if (cmbGenre.SelectedIndex == 5)
-                    genre = "History";
+                // Sets value of genre variable
+                switch(cmbGenre.SelectedIndex)
+                {
+                    case 0:
+                        genre = "Fantasy";
+                        break;
+                    case 1:
+                        genre = "Science Fiction";
+                        break;
+                    case 2:
+                        genre = "Romance";
+                        break;
+                    case 3:
+                        genre = "Comedy";
+                        break;
+                    case 4:
+                        genre = "Classic";
+                        break;
+                    case 5:
+                        genre = "History";
+                        break;
+                    case 6:
+                        genre = "Science";
+                        break;
+                    case 7:
+                        genre = "Computers & Software";
+                        break;
+                    case 8:
+                        genre = "Biographies & Autobiographies";
+                        break;
+                    case 9:
+                        genre = "Religion & Philosophy";
+                        break;
+                }
+
+                // Variable used to check if current value of bookID exists in database
+                bool idExist = true;                
+
+                // Auto-generation of Book ID
+                while (idExist)
+                {
+                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                    da = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Checks if Book ID exists in database, else increments value of bookID by +1
+                    if (dt.Rows.Count == 0)
+                        idExist = false;
+                    else
+                        bookID += 1;
+                }
 
                 string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                 cmd = new SqlCommand(cmdText, con);
@@ -88,11 +118,25 @@ namespace LibraryManagementSystem
                 MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
 
+                // Clears the input on all textboxes and the cmbGenre
                 btnClear_Click(sender, e);
-
-                // Everytime a book is added the value of book is increased by 1 to make each ID unique
-                bookID += 1;
             }            
+        }
+
+        // As the form loads, "Please select..." is automatically in cmbGenre.Text as a placeholder
+        // When the user clicks on the combobox, the placeholder will automatically be deleted and the list of options will be shown
+        private void cmbGenre_Enter(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "Please select...")
+                cmbGenre.Text = "";             
+            cmbGenre.DroppedDown = true;
+        }
+
+        // When the cmbGenre is not in focus and is empty, the placeholder will be present again
+        private void cmbGenre_Leave(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "")
+                cmbGenre.Text = "Please select...";
         }
     }
 }

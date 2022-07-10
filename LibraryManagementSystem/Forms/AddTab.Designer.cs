@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.txtPublication = new System.Windows.Forms.TextBox();
             this.txtEdition = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "  Add Books";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -75,7 +74,6 @@
             this.label2.Size = new System.Drawing.Size(101, 77);
             this.label2.TabIndex = 2;
             this.label2.Text = "Title:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -95,6 +93,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 291);
             this.panel1.TabIndex = 3;
+            // 
+            // cmbGenre
+            // 
+            this.cmbGenre.AllowDrop = true;
+            this.cmbGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenre.ForeColor = System.Drawing.Color.Black;
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Items.AddRange(new object[] {
+            "Fantasy",
+            "Science Fiction",
+            "Romance",
+            "Comedy",
+            "Classic",
+            "History",
+            "Science",
+            "Computers & Software",
+            "Biographies & Autobiographies",
+            "Religion & Philosophy"});
+            this.cmbGenre.Location = new System.Drawing.Point(194, 127);
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size(316, 28);
+            this.cmbGenre.TabIndex = 3;
+            this.cmbGenre.Text = "Please select...";
+            this.cmbGenre.Enter += new System.EventHandler(this.cmbGenre_Enter);
+            this.cmbGenre.Leave += new System.EventHandler(this.cmbGenre_Leave);
             // 
             // txtPublication
             // 
@@ -232,24 +257,6 @@
             this.label7.Size = new System.Drawing.Size(267, 16);
             this.label7.TabIndex = 20;
             this.label7.Text = "Enter book details to add in database";
-            // 
-            // cmbGenre
-            // 
-            this.cmbGenre.AllowDrop = true;
-            this.cmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Items.AddRange(new object[] {
-            "Fantasy",
-            "Science Fiction",
-            "Romance",
-            "Comedy",
-            "Classic",
-            "History"});
-            this.cmbGenre.Location = new System.Drawing.Point(194, 127);
-            this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size(316, 28);
-            this.cmbGenre.TabIndex = 3;
             // 
             // AddTab
             // 
