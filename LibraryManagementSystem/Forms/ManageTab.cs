@@ -74,5 +74,13 @@ namespace LibraryManagementSystem.Forms
             newTab.ShowDialog();
             this.Close();
         }
+
+        private void btnDeleteMember_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteMemberTab newTab = new DeleteMemberTab();
+            newTab.ShowDialog();
+            this.Close();
+        }
     }
 }
