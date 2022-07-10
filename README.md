@@ -29,6 +29,7 @@ Video Demonstration: TBD
   
 * The value of globalServer in Program.cs must be modified into the name of your local server.
  * public static string globalServer = ***"MAJO-PC"***;
+ 
 # Other notes:
 
   * The steps above won't be needed if a remote repository could be created
