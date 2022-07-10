@@ -28,7 +28,7 @@ Video Demonstration: TBD
     * Code: <kbd>CREATE TABLE booksData (username VARCHAR(50), password VARCHAR(50));</kbd>
   
 * The value of globalServer in Program.cs must be modified into the name of your local server.
-  * public static string globalServer = ***"MAJO-PC"***;
+  * <kbd>public static string globalServer = ***"MAJO-PC"***;</kbd>
  
 # Other notes:
 
