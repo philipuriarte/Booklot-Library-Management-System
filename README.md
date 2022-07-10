@@ -29,6 +29,7 @@ Video Demonstration: TBD
   
 * The value of globalServer in Program.cs must be modified into the name of your local server.
   * <kbd>public static string globalServer = ***"MAJO-PC"***;</kbd>
+  * <kbd>public static string globalServer = ***"DESKTOP-9MBNT14"***;</kbd>
  
 # Other notes:
 
