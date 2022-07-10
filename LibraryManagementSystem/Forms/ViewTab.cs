@@ -35,7 +35,7 @@ namespace LibraryManagementSystem
         {
             // Focus on datagrid because focusing on searchbox removes the appeal of placeholder
             this.ActiveControl = dgvBooks;
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM booksData", con);
