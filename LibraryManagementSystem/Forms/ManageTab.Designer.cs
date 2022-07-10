@@ -39,7 +39,6 @@
             this.btnDeleteMember = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -78,13 +77,14 @@
             this.dgvMembers.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMembers.BackgroundColor = System.Drawing.Color.Linen;
+            this.dgvMembers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Location = new System.Drawing.Point(72, 120);
+            this.dgvMembers.Location = new System.Drawing.Point(72, 142);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMembers.RowTemplate.Height = 24;
-            this.dgvMembers.Size = new System.Drawing.Size(1034, 532);
+            this.dgvMembers.Size = new System.Drawing.Size(1034, 481);
             this.dgvMembers.TabIndex = 23;
             this.dgvMembers.TabStop = false;
             // 
@@ -95,7 +95,7 @@
             this.rbtnMembers.Checked = true;
             this.rbtnMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbtnMembers.Location = new System.Drawing.Point(69, 2);
+            this.rbtnMembers.Location = new System.Drawing.Point(141, 110);
             this.rbtnMembers.Name = "rbtnMembers";
             this.rbtnMembers.Size = new System.Drawing.Size(104, 26);
             this.rbtnMembers.TabIndex = 25;
@@ -110,7 +110,7 @@
             this.rbtnTransac.BackColor = System.Drawing.Color.Transparent;
             this.rbtnTransac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnTransac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbtnTransac.Location = new System.Drawing.Point(187, 2);
+            this.rbtnTransac.Location = new System.Drawing.Point(259, 110);
             this.rbtnTransac.Name = "rbtnTransac";
             this.rbtnTransac.Size = new System.Drawing.Size(189, 26);
             this.rbtnTransac.TabIndex = 26;
@@ -124,7 +124,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Location = new System.Drawing.Point(75, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 27;
@@ -135,13 +135,13 @@
             this.btnAddMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddMember.AutoSize = true;
             this.btnAddMember.BackColor = System.Drawing.Color.Coral;
-            this.btnAddMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.2F, System.Drawing.FontStyle.Bold);
             this.btnAddMember.ForeColor = System.Drawing.Color.White;
-            this.btnAddMember.Location = new System.Drawing.Point(298, 680);
+            this.btnAddMember.Location = new System.Drawing.Point(193, 640);
             this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(168, 47);
+            this.btnAddMember.Size = new System.Drawing.Size(333, 69);
             this.btnAddMember.TabIndex = 28;
-            this.btnAddMember.Text = "Add Member";
+            this.btnAddMember.Text = "ADD MEMBER";
             this.btnAddMember.UseVisualStyleBackColor = false;
             this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
@@ -149,23 +149,20 @@
             // 
             this.btnDeleteMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMember.AutoSize = true;
-            this.btnDeleteMember.BackColor = System.Drawing.Color.Coral;
-            this.btnDeleteMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteMember.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDeleteMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnDeleteMember.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMember.Location = new System.Drawing.Point(694, 680);
+            this.btnDeleteMember.Location = new System.Drawing.Point(666, 640);
             this.btnDeleteMember.Name = "btnDeleteMember";
-            this.btnDeleteMember.Size = new System.Drawing.Size(168, 47);
+            this.btnDeleteMember.Size = new System.Drawing.Size(333, 69);
             this.btnDeleteMember.TabIndex = 29;
-            this.btnDeleteMember.Text = "Delete Member";
+            this.btnDeleteMember.Text = "DELETE MEMBER";
             this.btnDeleteMember.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.rbtnMembers);
-            this.panel1.Controls.Add(this.rbtnTransac);
-            this.panel1.Location = new System.Drawing.Point(72, 90);
+            this.panel1.Location = new System.Drawing.Point(72, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(389, 27);
             this.panel1.TabIndex = 30;
@@ -177,8 +174,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDeleteMember);
+            this.Controls.Add(this.rbtnMembers);
             this.Controls.Add(this.btnAddMember);
+            this.Controls.Add(this.rbtnTransac);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
@@ -191,8 +191,6 @@
             this.Text = "Booklot Library Management System";
             this.Load += new System.EventHandler(this.ManageTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
