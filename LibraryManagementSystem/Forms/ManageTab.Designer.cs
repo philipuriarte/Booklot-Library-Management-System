@@ -158,6 +158,7 @@
             this.btnDeleteMember.TabIndex = 29;
             this.btnDeleteMember.Text = "DELETE MEMBER";
             this.btnDeleteMember.UseVisualStyleBackColor = false;
+            this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
             // 
             // panel1
             // 
