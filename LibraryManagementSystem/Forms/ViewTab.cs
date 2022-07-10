@@ -79,7 +79,7 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
                 con.Open();
                 string searchText = txtSearch.Text;
 
@@ -124,7 +124,7 @@ namespace LibraryManagementSystem
         // Sort feature incomplete, currently in testing
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
             string cmdText;
 
