@@ -45,29 +45,36 @@ namespace LibraryManagementSystem.Forms
                 MessageBox.Show("Please complete all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
 
                 int bookID = Convert.ToInt32(txtBookID.Text);
                 string libraryID = txtLibraryID.Text;
-                string unavailText = "Borrowed by member ID: " + libraryID;
+                string unavailText = "unavail";
+                string borrowDate = System.DateTime.Now.ToString("yyyy/MM/d");
 
                 
-                cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "'", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
                 {
-                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "' AND Status = 'avail'", con);
+                    cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "' AND status = 'Avail'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
 
                     if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
                     {
-                        cmd = new SqlCommand("UPDATE booksData SET Status = '" + unavailText + "' WHERE BookID = '" + bookID + "'", con);
+                        cmd = new SqlCommand("UPDATE book SET status = '" + unavailText + "' WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET member_id = '" + libraryID + "' WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET borrow_date = '" + borrowDate + "' WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET return_date = DATEADD(DAY, +7, '" + borrowDate + "') WHERE book_id = '" + bookID + "'", con);
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Successfully issued book ID " + bookID + " to member " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

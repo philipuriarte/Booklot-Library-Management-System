@@ -39,18 +39,18 @@ namespace LibraryManagementSystem.Forms
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
                 string availText = "Avail";
                 int bookID = Convert.ToInt32(txtBookID.Text);
-                cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con); 
+                cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "'", con); 
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
                 {
-                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "' AND Status = 'avail'", con);
+                    cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "' AND status = 'Avail'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
@@ -61,8 +61,14 @@ namespace LibraryManagementSystem.Forms
                         txtBookID.Clear();
                     }
                     else
-                    { 
-                        cmd = new SqlCommand("UPDATE booksData SET Status = '" + availText + "' WHERE BookID = '" + bookID + "'", con);
+                    {
+                        cmd = new SqlCommand("UPDATE book SET status = '" + availText + "' WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET member_id = NULL WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET borrow_date = NULL WHERE book_id = '" + bookID + "'", con);
+                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("UPDATE borrow_data SET return_date = NULL WHERE book_id = '" + bookID + "'", con);
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Successfully returned book ID " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
