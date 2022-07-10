@@ -27,10 +27,8 @@ Video Demonstration: TBD
     * password VARCHAR(50)
     * Code: <kbd>CREATE TABLE booksData (username VARCHAR(50), password VARCHAR(50));</kbd>
   
-* The code on the Forms must be modified
-  * On all lines that are <kbd>con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");</kbd> change the value of "Data Source" <kbd>Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;</kbd> to the name of your local server
-  * Example: From <kbd>Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;</kbd> to <kbd>Data Source=MAJO-PC\\SQLEXPRESS;</kbd>
-  
+* The value of globalServer in Program.cs must be modified into the name of your local server.
+ * public static string globalServer = ***"MAJO-PC"***;
 # Other notes:
 
   * The steps above won't be needed if a remote repository could be created
