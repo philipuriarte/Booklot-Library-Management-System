@@ -47,10 +47,10 @@ namespace LibraryManagementSystem.Forms
                 string name = txtFullName.Text;
                 string email_address = txtEmailAd.Text;
 
-                // Variable used to check if current value of bookID exists in database
+                // Variable used to check if current value of member_id exists in database
                 bool idExist = true;
 
-                // Auto-generation of Book ID
+                // Auto-generation of member_id
                 while (idExist)
                 {
                     cmd = new SqlCommand("SELECT * FROM members_data WHERE member_id = '" + member_id + "'", con);
@@ -58,7 +58,7 @@ namespace LibraryManagementSystem.Forms
                     dt = new DataTable();
                     da.Fill(dt);
 
-                    // Checks if Book ID exists in database, else increments value of bookID by +1
+                    // Checks if member_id exists in database, else increments value of member_id by +1
                     if (dt.Rows.Count == 0)
                         idExist = false;
                     else
@@ -72,11 +72,8 @@ namespace LibraryManagementSystem.Forms
                 MessageBox.Show("Successfully added one member.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
 
-                // Clears the input on all textboxes and the cmbGenre
+                // Clears the input on all textboxes
                 btnClear_Click(sender, e);
-
-
-
             }
         }
 
