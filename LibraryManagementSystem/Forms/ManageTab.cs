@@ -32,7 +32,7 @@ namespace LibraryManagementSystem.Forms
         // Loads the SQL members_data table to dataGrid when ManageTab form is launched
         private void ManageTab_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM members_data", con);
@@ -54,7 +54,7 @@ namespace LibraryManagementSystem.Forms
         // Loads the SQL active_transactions table to dataGrid
         private void rbtnTransac_CheckedChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM active_transactions", con);
@@ -65,6 +65,14 @@ namespace LibraryManagementSystem.Forms
             da.Fill(dt);
             dgvMembers.DataSource = dt;
             con.Close();
+        }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddMemberTab newTab = new AddMemberTab();
+            newTab.ShowDialog();
+            this.Close();
         }
     }
 }

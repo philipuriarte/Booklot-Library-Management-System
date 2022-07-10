@@ -8,7 +8,7 @@ namespace LibraryManagementSystem
 {
     internal static class Program
     {
-        public static string globalServer = "MAJO-PC";
+        public static string globalServer = "DESKTOP-9MBNT14";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
