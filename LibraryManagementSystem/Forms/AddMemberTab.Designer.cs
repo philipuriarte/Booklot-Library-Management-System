@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMemberTab));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEmailAd = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtEmailAd = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(869, 309);
             this.panel1.TabIndex = 3;
+            // 
+            // txtEmailAd
+            // 
+            this.txtEmailAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailAd.Location = new System.Drawing.Point(368, 176);
+            this.txtEmailAd.Name = "txtEmailAd";
+            this.txtEmailAd.Size = new System.Drawing.Size(426, 45);
+            this.txtEmailAd.TabIndex = 3;
             // 
             // txtFullName
             // 
@@ -109,6 +117,7 @@
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSubmit
             // 
@@ -123,14 +132,7 @@
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            // 
-            // txtEmailAd
-            // 
-            this.txtEmailAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailAd.Location = new System.Drawing.Point(368, 176);
-            this.txtEmailAd.Name = "txtEmailAd";
-            this.txtEmailAd.Size = new System.Drawing.Size(426, 45);
-            this.txtEmailAd.TabIndex = 3;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnBack
             // 
@@ -160,7 +162,9 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "AddMemberTab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booklot Library Management System";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
