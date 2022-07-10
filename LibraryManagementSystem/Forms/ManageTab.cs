@@ -54,7 +54,7 @@ namespace LibraryManagementSystem.Forms
         // Loads the SQL active_transactions table to dataGrid
         private void rbtnTransac_CheckedChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=DESKTOP-9MBNT14\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
             con.Open();
 
             cmd = new SqlCommand("SELECT * FROM active_transactions", con);
