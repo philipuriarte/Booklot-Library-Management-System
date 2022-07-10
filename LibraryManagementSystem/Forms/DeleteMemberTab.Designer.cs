@@ -64,7 +64,7 @@
             this.btnBack.Location = new System.Drawing.Point(37, 28);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(87, 71);
-            this.btnBack.TabIndex = 11;
+            this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -77,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(157, 290);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(869, 168);
-            this.panel1.TabIndex = 12;
+            this.panel1.TabIndex = 1;
             // 
             // txtMemberID
             // 
@@ -107,7 +107,7 @@
             this.btnDelete.Location = new System.Drawing.Point(467, 550);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(248, 74);
-            this.btnDelete.TabIndex = 13;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
