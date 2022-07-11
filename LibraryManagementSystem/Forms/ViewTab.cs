@@ -48,8 +48,8 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
-        // As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
-        // When the user clicks on the textbox, the placeholder will automatically be deleted
+        // As the form loads, "Enter text" is automatically in txtSearch textbox as a placeholder
+        // When the user clicks on txtSearch, the placeholder will automatically be deleted
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Enter text")
@@ -59,7 +59,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        // When the textbox is not in focus and is empty, the placeholder will be present again
+        // When txtSearch is not in focus and is empty, the placeholder will be present again
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -121,7 +121,7 @@ namespace LibraryManagementSystem
             }            
         }
 
-        // Sort feature incomplete, currently in testing
+        // Sort feature
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
@@ -152,7 +152,7 @@ namespace LibraryManagementSystem
                     break;
                 // Sort books by the date they should be returned
                 case 4:
-                    cmdText = "SELECT * FROM booksData ORDER BY return_date";
+                    cmdText = "SELECT * FROM borrow_data ORDER BY return_date";
                     cmd = new SqlCommand(cmdText, con);
                     break;
             }
@@ -166,7 +166,7 @@ namespace LibraryManagementSystem
         }
 
         // As the form loads, "Sort by:" is automatically in cmbSort.Text as a placeholder
-        // When the user clicks on the combobox, the placeholder will automatically be deleted and the list of options will be shown
+        // When the user clicks on cmbSort, the placeholder will automatically be deleted and the list of options will be shown
         private void cmbSort_Enter(object sender, EventArgs e)
         {
             if (cmbSort.Text == "Sort by:")
@@ -174,7 +174,7 @@ namespace LibraryManagementSystem
             cmbSort.DroppedDown = true;
         }
 
-        // When the cmbSort is not in focus and is empty, the placeholder will be present again
+        // When cmbSort is not in focus and is empty, the placeholder will be present again
         private void cmbSort_Leave(object sender, EventArgs e)
         {
             if (cmbSort.Text == "")
