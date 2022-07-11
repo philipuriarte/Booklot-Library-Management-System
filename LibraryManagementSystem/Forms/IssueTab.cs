@@ -50,7 +50,7 @@ namespace LibraryManagementSystem.Forms
 
                 int bookID = Convert.ToInt32(txtBookID.Text);
                 string libraryID = txtLibraryID.Text;
-                string unavailText = "unavail";
+                string unavailText = "Unavail";
                 string borrowDate = System.DateTime.Now.ToString("yyyy/MM/d");
 
                 
@@ -59,7 +59,7 @@ namespace LibraryManagementSystem.Forms
                 dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
+                if (dt.Rows.Count > 0) // Check if bookID entered matches any in book_id column from book
                 {
                     cmd = new SqlCommand("SELECT * FROM member WHERE mem_id = '" + libraryID + "'", con);
                     da = new SqlDataAdapter(cmd);
@@ -73,7 +73,7 @@ namespace LibraryManagementSystem.Forms
                         dt = new DataTable();
                         da.Fill(dt);
 
-                        if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
+                        if (dt.Rows.Count > 0) // check if bookID matches and Status is 'Avail'
                         {
                             cmd = new SqlCommand("UPDATE book SET status = '" + unavailText + "' WHERE book_id = '" + bookID + "'", con);
                             cmd.ExecuteNonQuery();
