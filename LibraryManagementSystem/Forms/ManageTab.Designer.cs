@@ -65,7 +65,7 @@
             this.btnBack.Location = new System.Drawing.Point(37, 28);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(87, 71);
-            this.btnBack.TabIndex = 19;
+            this.btnBack.TabIndex = 6;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -84,7 +84,7 @@
             this.dgvMembers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMembers.RowTemplate.Height = 24;
             this.dgvMembers.Size = new System.Drawing.Size(1034, 481);
-            this.dgvMembers.TabIndex = 23;
+            this.dgvMembers.TabIndex = 1;
             this.dgvMembers.TabStop = false;
             // 
             // rbtnMembers
@@ -97,7 +97,7 @@
             this.rbtnMembers.Location = new System.Drawing.Point(141, 120);
             this.rbtnMembers.Name = "rbtnMembers";
             this.rbtnMembers.Size = new System.Drawing.Size(104, 26);
-            this.rbtnMembers.TabIndex = 25;
+            this.rbtnMembers.TabIndex = 4;
             this.rbtnMembers.TabStop = true;
             this.rbtnMembers.Text = "Members";
             this.rbtnMembers.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             this.rbtnTransac.Location = new System.Drawing.Point(259, 120);
             this.rbtnTransac.Name = "rbtnTransac";
             this.rbtnTransac.Size = new System.Drawing.Size(189, 26);
-            this.rbtnTransac.TabIndex = 26;
+            this.rbtnTransac.TabIndex = 5;
             this.rbtnTransac.Text = "Active Transactions";
             this.rbtnTransac.UseVisualStyleBackColor = false;
             this.rbtnTransac.CheckedChanged += new System.EventHandler(this.rbtnTransac_CheckedChanged);
@@ -139,7 +139,7 @@
             this.btnAddMember.Location = new System.Drawing.Point(193, 640);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(333, 69);
-            this.btnAddMember.TabIndex = 28;
+            this.btnAddMember.TabIndex = 2;
             this.btnAddMember.Text = "ADD MEMBER";
             this.btnAddMember.UseVisualStyleBackColor = false;
             this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
@@ -154,7 +154,7 @@
             this.btnDeleteMember.Location = new System.Drawing.Point(666, 640);
             this.btnDeleteMember.Name = "btnDeleteMember";
             this.btnDeleteMember.Size = new System.Drawing.Size(333, 69);
-            this.btnDeleteMember.TabIndex = 29;
+            this.btnDeleteMember.TabIndex = 3;
             this.btnDeleteMember.Text = "DELETE MEMBER";
             this.btnDeleteMember.UseVisualStyleBackColor = false;
             this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
