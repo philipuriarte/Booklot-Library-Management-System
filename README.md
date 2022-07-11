@@ -1,14 +1,12 @@
 # Links:
 
-SQL Tables Github Repo: https://github.com/madchavez/sql-source-control
-
 To-Do list: [https://github.com/PhilipU13/Library-Management-System](https://github.com/PhilipU13/Library-Management-System/projects/1?fullscreen=true)
 
 Documentation: [https://docs.google.com/document](https://docs.google.com/document/d/1Ev4pP_uHvwmtyXkHVHUa9ffxdd-uWtnLswkc9_eqtr0/edit?usp=sharing)
 
 sql-source-control repository: https://github.com/madchavez/sql-source-control
 
-Source Control download: https://www.devart.com/dbforge/sql/source-control/download.html
+Source Control plugin download: https://www.devart.com/dbforge/sql/source-control/download.html
 
 Video Demonstration: TBD
 
@@ -16,9 +14,9 @@ Video Demonstration: TBD
 
 * The SQL Database must be cloned from the sql-source-control repository (check in links).
   * Clone the repository to a local folder using cmd
-    * Command: git -clone https://github.com/madchavez/sql-source-control.git
+    * Command: <kbd>git -clone https://github.com/madchavez/sql-source-control.git</kbd>
   * Download the Source Control plugin for SSMS (check in links).
-  * Open SSMS and create a database (You may name it "LibDat" for uniformity)
+  * Open SSMS and create a database and name it ***"LibDat"***
   * Link your local database to the repo database.
     * Right-click on the database and under "Source Control" click on "Link Database to Source Control"
     * Look for "Source control repository" and click on the plus sign next to the drop-down box.
