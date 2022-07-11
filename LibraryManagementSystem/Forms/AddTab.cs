@@ -48,7 +48,7 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
 
                 int bookID = 1;
@@ -99,7 +99,7 @@ namespace LibraryManagementSystem
                 // Auto-generation of Book ID
                 while (idExist)
                 {
-                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                    cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
@@ -111,8 +111,11 @@ namespace LibraryManagementSystem
                         bookID += 1;
                 }
 
-                string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                string cmdText = "INSERT INTO book VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                 cmd = new SqlCommand(cmdText, con);
+                cmd.ExecuteNonQuery();
+                string cmdText2 = "INSERT INTO borrow_data (book_id) VALUES(" + bookID + ")";
+                cmd = new SqlCommand(cmdText2, con);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
