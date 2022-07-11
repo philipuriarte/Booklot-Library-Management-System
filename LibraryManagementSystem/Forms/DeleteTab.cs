@@ -80,9 +80,11 @@ namespace LibraryManagementSystem
                     // checks if user chooses the "yes" option in the message box
                     if (result == DialogResult.Yes)
                     {
-                        cmd0 = new SqlCommand("DELETE FROM book WHERE book_id = '" + bookID + "'", con);
+                        cmd0 = new SqlCommand("DELETE FROM borrow_data WHERE book_id = '" + bookID + "'", con);
                         cmd0.ExecuteNonQuery();
-                        cmd1 = new SqlCommand("DELETE FROM borrow_data WHERE book_id = '" + bookID + "'", con);
+                        cmd1 = new SqlCommand("DELETE FROM book WHERE book_id = '" + bookID + "'", con);
+                        cmd1.ExecuteNonQuery();
+                        
                         MessageBox.Show("Succesfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();
                         txtBookID.Clear();
