@@ -6,28 +6,26 @@ To-Do list: [https://github.com/PhilipU13/Library-Management-System](https://git
 
 Documentation: [https://docs.google.com/document](https://docs.google.com/document/d/1Ev4pP_uHvwmtyXkHVHUa9ffxdd-uWtnLswkc9_eqtr0/edit?usp=sharing)
 
+sql-source-control repository: https://github.com/madchavez/sql-source-control
+
+Source Control download: https://www.devart.com/dbforge/sql/source-control/download.html
+
 Video Demonstration: TBD
 
 # Notes To make this project work: 
 
-* An SQL database must be created locally using SSMS
-  * Create a **DATABASE** named *libraryData* 
-    * Code: <kbd>CREATE DATABASE libraryData;</kbd>
-  * Create a **TABLE** named *booksData* with the following column names and data type in order:
-    * BookID INT
-    * Title VARCHAR(50)
-    * Author VARCHAR(50)
-    * Genre VARCHAR(50)
-    * Edition VARCHAR(50)
-    * Publication VARCHAR(50)
-    * Status VARCHAR(50)
-    * DateBorrowed DATE
-    * DateToReturn DATE </br>
-    * Code: <kbd>CREATE TABLE booksData (BookID INT, Title VARCHAR(50), Author VARCHAR(50), Edition VARCHAR(50), Publication VARCHAR(50), Status VARCHAR(50), DateBorrowed DATE, DateToReturn DATE);</kbd>
-  * Create a **TABLE** named *loginData* with the following column names and data type in order:
-    * username VARCHAR(50)
-    * password VARCHAR(50)
-    * Code: <kbd>CREATE TABLE booksData (username VARCHAR(50), password VARCHAR(50));</kbd>
+* The SQL Database must be cloned from the sql-source-control repository (check in links).
+  * Clone the repository to a local folder using cmd
+    * Command: git -clone https://github.com/madchavez/sql-source-control.git
+  * Download the Source Control plugin for SSMS (check in links).
+  * Open SSMS and create a database (You may name it "LibDat" for uniformity)
+  * Link your local database to the repo database.
+    * Right-click on the database and under "Source Control" click on "Link Database to Source Control"
+    * Look for "Source control repository" and click on the plus sign next to the drop-down box.
+    * Choose Git as the Source control system and under the "Repository folder" navigate to your local folder where you cloned the remote repository. 
+    * Test connection and close the "Source control repository" window.
+    * Click on "Dedicated" for the database development model then click "Link"
+    * Click on the checkbox next to Remote changes and then click the "Get Latest" button.
   
 * The value of globalServer in Program.cs must be modified into the name of your local server.
   * <kbd>public static string globalServer = ***"MAJO-PC"***;</kbd>
@@ -35,5 +33,6 @@ Video Demonstration: TBD
  
 # Other notes:
 
-  * The steps above won't be needed if a remote repository could be created
+  * The remote SQL Database is still experimental.
+  * Values inside tables are unable to be committed and pulled with this method.
   
