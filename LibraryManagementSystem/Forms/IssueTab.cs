@@ -61,31 +61,45 @@ namespace LibraryManagementSystem.Forms
 
                 if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
                 {
-                    cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "' AND status = 'Avail'", con);
+                    cmd = new SqlCommand("SELECT * FROM member WHERE mem_id = '" + libraryID + "'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
 
-                    if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
+                    if (dt.Rows.Count > 0) // Check if libraryID entered matches any in mem_id column from member
                     {
-                        cmd = new SqlCommand("UPDATE book SET status = '" + unavailText + "' WHERE book_id = '" + bookID + "'", con);
-                        cmd.ExecuteNonQuery();
-                        cmd = new SqlCommand("UPDATE borrow_data SET member_id = '" + libraryID + "' WHERE book_id = '" + bookID + "'", con);
-                        cmd.ExecuteNonQuery();
-                        cmd = new SqlCommand("UPDATE borrow_data SET borrow_date = '" + borrowDate + "' WHERE book_id = '" + bookID + "'", con);
-                        cmd.ExecuteNonQuery();
-                        cmd = new SqlCommand("UPDATE borrow_data SET return_date = DATEADD(DAY, +7, '" + borrowDate + "') WHERE book_id = '" + bookID + "'", con);
-                        cmd.ExecuteNonQuery();
+                        cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "' AND status = 'Avail'", con);
+                        da = new SqlDataAdapter(cmd);
+                        dt = new DataTable();
+                        da.Fill(dt);
 
-                        MessageBox.Show("Successfully issued book ID " + bookID + " to member " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        con.Close();
+                        if (dt.Rows.Count > 0) //check if bookID matches and Status is 'avail'
+                        {
+                            cmd = new SqlCommand("UPDATE book SET status = '" + unavailText + "' WHERE book_id = '" + bookID + "'", con);
+                            cmd.ExecuteNonQuery();
+                            cmd = new SqlCommand("UPDATE borrow_data SET member_id = '" + libraryID + "' WHERE book_id = '" + bookID + "'", con);
+                            cmd.ExecuteNonQuery();
+                            cmd = new SqlCommand("UPDATE borrow_data SET borrow_date = '" + borrowDate + "' WHERE book_id = '" + bookID + "'", con);
+                            cmd.ExecuteNonQuery();
+                            cmd = new SqlCommand("UPDATE borrow_data SET return_date = DATEADD(DAY, +7, '" + borrowDate + "') WHERE book_id = '" + bookID + "'", con);
+                            cmd.ExecuteNonQuery();
 
-                        btnClear_Click(sender, e);
+                            MessageBox.Show("Successfully issued book ID " + bookID + " to member " + libraryID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            con.Close();
+
+                            btnClear_Click(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Book is currently unavailabe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            btnClear_Click(sender, e);
+                        }
                     }
-                    else {
-                        MessageBox.Show("Book is currently unavailabe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        MessageBox.Show("Member does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         btnClear_Click(sender, e);
-                    }
+                    }                    
                 }
                 else {
                     MessageBox.Show("Book ID does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
