@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddMember = new System.Windows.Forms.Button();
             this.btnDeleteMember = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,13 +44,13 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 28.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.label1.Size = new System.Drawing.Size(1182, 87);
+            this.label1.Size = new System.Drawing.Size(1182, 113);
             this.label1.TabIndex = 18;
             this.label1.Text = "Manage Members";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +62,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(28, 32);
+            this.btnBack.Location = new System.Drawing.Point(37, 28);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(45, 40);
+            this.btnBack.Size = new System.Drawing.Size(87, 71);
             this.btnBack.TabIndex = 19;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -79,7 +78,7 @@
             this.dgvMembers.BackgroundColor = System.Drawing.Color.Linen;
             this.dgvMembers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Location = new System.Drawing.Point(72, 142);
+            this.dgvMembers.Location = new System.Drawing.Point(72, 152);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -95,7 +94,7 @@
             this.rbtnMembers.Checked = true;
             this.rbtnMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbtnMembers.Location = new System.Drawing.Point(141, 110);
+            this.rbtnMembers.Location = new System.Drawing.Point(141, 120);
             this.rbtnMembers.Name = "rbtnMembers";
             this.rbtnMembers.Size = new System.Drawing.Size(104, 26);
             this.rbtnMembers.TabIndex = 25;
@@ -110,7 +109,7 @@
             this.rbtnTransac.BackColor = System.Drawing.Color.Transparent;
             this.rbtnTransac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnTransac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbtnTransac.Location = new System.Drawing.Point(259, 110);
+            this.rbtnTransac.Location = new System.Drawing.Point(259, 120);
             this.rbtnTransac.Name = "rbtnTransac";
             this.rbtnTransac.Size = new System.Drawing.Size(189, 26);
             this.rbtnTransac.TabIndex = 26;
@@ -124,7 +123,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(75, 112);
+            this.label2.Location = new System.Drawing.Point(75, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 27;
@@ -160,14 +159,6 @@
             this.btnDeleteMember.UseVisualStyleBackColor = false;
             this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(72, 109);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 27);
-            this.panel1.TabIndex = 30;
-            // 
             // ManageTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,7 +174,6 @@
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -207,6 +197,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddMember;
         private System.Windows.Forms.Button btnDeleteMember;
-        private System.Windows.Forms.Panel panel1;
     }
 }
