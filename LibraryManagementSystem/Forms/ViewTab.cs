@@ -147,12 +147,12 @@ namespace LibraryManagementSystem
                     break;
                 // Sort books by the date they were borrowed
                 case 3:
-                    cmdText = "SELECT * FROM borrow_data ORDER BY borrow_date";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.borrow_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they should be returned
                 case 4:
-                    cmdText = "SELECT * FROM borrow_data ORDER BY return_date";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.return_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
             }
