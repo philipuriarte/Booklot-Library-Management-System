@@ -48,7 +48,7 @@ namespace LibraryManagementSystem.Forms
                 dt = new DataTable();
                 da.Fill(dt);
 
-                if (dt.Rows.Count > 0) //check if bookID entered matches any in BookID column from booksData
+                if (dt.Rows.Count > 0) //check if bookID entered matches any in book_id column from book
                 {
                     cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "' AND status = 'Avail'", con);
                     da = new SqlDataAdapter(cmd);
@@ -76,7 +76,6 @@ namespace LibraryManagementSystem.Forms
 
                         txtBookID.Clear();
                     }
-
                 }
                 else
                 {
