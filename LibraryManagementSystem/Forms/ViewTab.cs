@@ -132,17 +132,17 @@ namespace LibraryManagementSystem
             {
                 // Sort Title in alphabetical order
                 case 0:
-                    cmdText = "SELECT * FROM book ORDER BY title";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.title;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort Author in alphabetical order
                 case 1:
-                    cmdText = "SELECT * FROM book ORDER BY author";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.author;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort BookID in ascending order
                 case 2:
-                    cmdText = "SELECT * FROM book ORDER BY book_id";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.book_id";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they were borrowed

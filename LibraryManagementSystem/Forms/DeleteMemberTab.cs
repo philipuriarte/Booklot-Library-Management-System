@@ -29,18 +29,18 @@ namespace LibraryManagementSystem.Forms
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
                 int memberID = Convert.ToInt32(txtMemberID.Text);
                 bool idExist = false;
 
-                cmd = new SqlCommand("SELECT * FROM members_data", con);
+                cmd = new SqlCommand("SELECT * FROM member", con);
 
                 // Selects value from members_data table in the database with the same memberID as inputted and assigns them to their respective variables
-                cmdN = new SqlCommand("SELECT name FROM members_data WHERE member_id = '" + memberID + "'", con);
+                cmdN = new SqlCommand("SELECT name FROM member WHERE mem_id = '" + memberID + "'", con);
                 var name = cmdN.ExecuteScalar();
 
-                cmdEA = new SqlCommand("SELECT email_address FROM members_data WHERE member_id = '" + memberID + "'", con);
+                cmdEA = new SqlCommand("SELECT email FROM member WHERE mem_id = '" + memberID + "'", con);
                 var email_address = cmdEA.ExecuteScalar();
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -63,7 +63,7 @@ namespace LibraryManagementSystem.Forms
                     // Checks if user chooses the "yes" option in the message box
                     if (result == DialogResult.Yes)
                     {
-                        cmd0 = new SqlCommand("DELETE FROM members_data WHERE member_id = '" + memberID + "'", con);
+                        cmd0 = new SqlCommand("DELETE FROM member WHERE mem_id = '" + memberID + "'", con);
                         cmd0.ExecuteNonQuery();
                         MessageBox.Show("Succesfully deleted Member ID: " + memberID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();

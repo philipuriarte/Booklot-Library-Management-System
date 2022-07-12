@@ -40,7 +40,7 @@ namespace LibraryManagementSystem.Forms
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
 
                 int member_id = 1;
@@ -53,7 +53,7 @@ namespace LibraryManagementSystem.Forms
                 // Auto-generation of member_id
                 while (idExist)
                 {
-                    cmd = new SqlCommand("SELECT * FROM members_data WHERE member_id = '" + member_id + "'", con);
+                    cmd = new SqlCommand("SELECT * FROM member WHERE mem_id = '" + member_id + "'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
@@ -65,7 +65,7 @@ namespace LibraryManagementSystem.Forms
                         member_id += 1;
                 }
 
-                string cmdText = "INSERT INTO members_data VALUES ('" + member_id + "','" + name + "','" + email_address+ "')";
+                string cmdText = "INSERT INTO member VALUES ('" + member_id + "','" + name + "','" + email_address+ "')";
                 cmd = new SqlCommand(cmdText, con);
                 cmd.ExecuteNonQuery();
 
