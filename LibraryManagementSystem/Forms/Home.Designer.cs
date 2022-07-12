@@ -156,6 +156,7 @@
             this.btnManage.TabStop = false;
             this.btnManage.Text = "Manage Members";
             this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // pictureBox1
             // 
