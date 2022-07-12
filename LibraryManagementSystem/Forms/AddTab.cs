@@ -48,7 +48,7 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
 
                 int bookID = 1;
@@ -96,23 +96,26 @@ namespace LibraryManagementSystem
                 // Variable used to check if current value of bookID exists in database
                 bool idExist = true;                
 
-                // Auto-generation of Book ID
+                // Auto-generation of book_id
                 while (idExist)
                 {
-                    cmd = new SqlCommand("SELECT * FROM booksData WHERE BookID = '" + bookID + "'", con);
+                    cmd = new SqlCommand("SELECT * FROM book WHERE book_id = '" + bookID + "'", con);
                     da = new SqlDataAdapter(cmd);
                     dt = new DataTable();
                     da.Fill(dt);
 
-                    // Checks if Book ID exists in database, else increments value of bookID by +1
+                    // Checks if book_id exists in database, else increments value of bookID by +1
                     if (dt.Rows.Count == 0)
                         idExist = false;
                     else
                         bookID += 1;
                 }
 
-                string cmdText = "INSERT INTO booksData VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
+                string cmdText = "INSERT INTO book VALUES ('" + bookID + "','" + title + "','" + author + "','" + genre + "','" + edition + "','" + publication + "','" + "Avail" + "')";
                 cmd = new SqlCommand(cmdText, con);
+                cmd.ExecuteNonQuery();
+                string cmdText2 = "INSERT INTO borrow_data (book_id) VALUES(" + bookID + ")";
+                cmd = new SqlCommand(cmdText2, con);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully added one book.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -124,7 +127,7 @@ namespace LibraryManagementSystem
         }
 
         // As the form loads, "Please select..." is automatically in cmbGenre.Text as a placeholder
-        // When the user clicks on the combobox, the placeholder will automatically be deleted and the list of options will be shown
+        // When the user clicks on cmbGenre, the placeholder will automatically be deleted and the list of options will be shown
         private void cmbGenre_Enter(object sender, EventArgs e)
         {
             if (cmbGenre.Text == "Please select...")
@@ -132,7 +135,7 @@ namespace LibraryManagementSystem
             cmbGenre.DroppedDown = true;
         }
 
-        // When the cmbGenre is not in focus and is empty, the placeholder will be present again
+        // When cmbGenre is not in focus and is empty, the placeholder will be present again
         private void cmbGenre_Leave(object sender, EventArgs e)
         {
             if (cmbGenre.Text == "")

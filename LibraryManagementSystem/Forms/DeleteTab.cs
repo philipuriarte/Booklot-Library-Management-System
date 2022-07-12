@@ -18,7 +18,7 @@ namespace LibraryManagementSystem
             InitializeComponent();
         }
         SqlConnection con;
-        SqlCommand cmd, cmd0, cmdT, cmdA, cmdG, cmdE, cmdP;
+        SqlCommand cmd, cmd0, cmd1, cmdT, cmdA, cmdG, cmdE, cmdP;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -37,27 +37,27 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
                 int bookID = Convert.ToInt32(txtBookID.Text);
                 bool idExist = false;
 
-                cmd = new SqlCommand("SELECT * FROM booksData", con);
+                cmd = new SqlCommand("SELECT * FROM book", con);
 
-                // selects value from booksData table in the database with the same bookID as inputted and assigns them to their respective variables
-                cmdT = new SqlCommand("SELECT Title FROM booksData WHERE BookID = '" + bookID + "'", con);
+                // selects value from book table in the database with the same bookID as inputted and assigns them to their respective variables
+                cmdT = new SqlCommand("SELECT title FROM book WHERE book_id = '" + bookID + "'", con);
                 var title = cmdT.ExecuteScalar();
 
-                cmdA = new SqlCommand("SELECT Author FROM booksData WHERE BookID = '" + bookID + "'", con);
+                cmdA = new SqlCommand("SELECT author FROM book WHERE book_id = '" + bookID + "'", con);
                 var author = cmdA.ExecuteScalar();
 
-                cmdG = new SqlCommand("SELECT Genre FROM booksData WHERE BookID = '" + bookID + "'", con);
+                cmdG = new SqlCommand("SELECT genre FROM book WHERE book_id = '" + bookID + "'", con);
                 var genre = cmdG.ExecuteScalar();
 
-                cmdE = new SqlCommand("SELECT Edition FROM booksData WHERE BookID = '" + bookID + "'", con);
+                cmdE = new SqlCommand("SELECT edition FROM book WHERE book_id = '" + bookID + "'", con);
                 var edition = cmdE.ExecuteScalar();
 
-                cmdP = new SqlCommand("SELECT Publication FROM booksData WHERE BookID = '" + bookID + "'", con);
+                cmdP = new SqlCommand("SELECT publication FROM book WHERE book_id = '" + bookID + "'", con);
                 var pub = cmdP.ExecuteScalar();
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -80,8 +80,11 @@ namespace LibraryManagementSystem
                     // checks if user chooses the "yes" option in the message box
                     if (result == DialogResult.Yes)
                     {
-                        cmd0 = new SqlCommand("DELETE FROM booksData WHERE BookID = '" + bookID + "'", con);
+                        cmd0 = new SqlCommand("DELETE FROM borrow_data WHERE book_id = '" + bookID + "'", con);
                         cmd0.ExecuteNonQuery();
+                        cmd1 = new SqlCommand("DELETE FROM book WHERE book_id = '" + bookID + "'", con);
+                        cmd1.ExecuteNonQuery();
+                        
                         MessageBox.Show("Succesfully deleted book ID: " + bookID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();
                         txtBookID.Clear();

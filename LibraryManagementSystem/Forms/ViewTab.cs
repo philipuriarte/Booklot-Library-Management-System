@@ -35,10 +35,10 @@ namespace LibraryManagementSystem
         {
             // Focus on datagrid because focusing on searchbox removes the appeal of placeholder
             this.ActiveControl = dgvBooks;
-            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
 
-            cmd = new SqlCommand("SELECT * FROM booksData", con);
+            cmd = new SqlCommand("SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id; ", con);
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -48,8 +48,8 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
-        // As the form loads, "Enter text" is automatically in the txtSearch textbox as a placeholder
-        // When the user clicks on the textbox, the placeholder will automatically be deleted
+        // As the form loads, "Enter text" is automatically in txtSearch textbox as a placeholder
+        // When the user clicks on txtSearch, the placeholder will automatically be deleted
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Enter text")
@@ -59,7 +59,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        // When the textbox is not in focus and is empty, the placeholder will be present again
+        // When txtSearch is not in focus and is empty, the placeholder will be present again
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -79,19 +79,19 @@ namespace LibraryManagementSystem
             }
             else
             {
-                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+                con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
                 con.Open();
                 string searchText = txtSearch.Text;
 
                 // Checks if input in txtSearch is an integer value
                 if (int.TryParse(txtSearch.Text, out int id))
                 {
-                    string cmdTextInt = "SELECT * FROM booksData WHERE BookID = '" + searchText + "'";
+                    string cmdTextInt = "SELECT * FROM book WHERE book_id = '" + searchText + "'";
                     cmd = new SqlCommand(cmdTextInt, con);
                 }
                 else
                 {
-                    string cmdTextStr = "SELECT * FROM booksData WHERE Title = '" + searchText + "' OR Author = '" + searchText + "' OR Genre = '" + searchText + "' OR Edition = '" + searchText + "' OR Publication = '" + searchText + "'";
+                    string cmdTextStr = "SELECT * FROM book WHERE title = '" + searchText + "' OR author = '" + searchText + "' OR genre = '" + searchText + "' OR edition = '" + searchText + "' OR publication = '" + searchText + "'";
                     cmd = new SqlCommand(cmdTextStr, con);
                 }
 
@@ -121,10 +121,10 @@ namespace LibraryManagementSystem
             }            
         }
 
-        // Sort feature incomplete, currently in testing
+        // Sort feature
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
             string cmdText;
 
@@ -132,27 +132,27 @@ namespace LibraryManagementSystem
             {
                 // Sort Title in alphabetical order
                 case 0:
-                    cmdText = "SELECT * FROM booksData ORDER BY Title";
+                    cmdText = "SELECT * FROM book ORDER BY title";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort Author in alphabetical order
                 case 1:
-                    cmdText = "SELECT * FROM booksData ORDER BY Author";
+                    cmdText = "SELECT * FROM book ORDER BY author";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort BookID in ascending order
                 case 2:
-                    cmdText = "SELECT * FROM booksData ORDER BY BookID";
+                    cmdText = "SELECT * FROM book ORDER BY book_id";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they were borrowed
                 case 3:
-                    cmdText = "SELECT * FROM booksData ORDER BY DateBorrowed";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.borrow_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they should be returned
                 case 4:
-                    cmdText = "SELECT * FROM booksData ORDER BY DateToReturn";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.return_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
             }
@@ -166,7 +166,7 @@ namespace LibraryManagementSystem
         }
 
         // As the form loads, "Sort by:" is automatically in cmbSort.Text as a placeholder
-        // When the user clicks on the combobox, the placeholder will automatically be deleted and the list of options will be shown
+        // When the user clicks on cmbSort, the placeholder will automatically be deleted and the list of options will be shown
         private void cmbSort_Enter(object sender, EventArgs e)
         {
             if (cmbSort.Text == "Sort by:")
@@ -174,7 +174,7 @@ namespace LibraryManagementSystem
             cmbSort.DroppedDown = true;
         }
 
-        // When the cmbSort is not in focus and is empty, the placeholder will be present again
+        // When cmbSort is not in focus and is empty, the placeholder will be present again
         private void cmbSort_Leave(object sender, EventArgs e)
         {
             if (cmbSort.Text == "")

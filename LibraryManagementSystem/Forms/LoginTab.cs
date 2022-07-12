@@ -34,16 +34,14 @@ namespace LibraryManagementSystem.Forms
             }
             else
             {
-                con = new SqlConnection("Data Source = " + Program.globalServer + "\\SQLEXPRESS; Initial Catalog = libraryData; Integrated Security = True");
+                con = new SqlConnection("Data Source = " + Program.globalServer + "\\SQLEXPRESS; Initial Catalog = LibDat; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("SELECT * FROM loginData WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
+                cmd = new SqlCommand("SELECT * FROM login WHERE username = '" + txtUser.Text + "' AND password ='" + txtPass.Text + "'", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 // Checks if any entered username and password is correct/within the database
-                // Revert if condition back to "if (dt.Rows.Count > 0)" later
-                // Changed username and pass to "a" for faster testing
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Login Success", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
