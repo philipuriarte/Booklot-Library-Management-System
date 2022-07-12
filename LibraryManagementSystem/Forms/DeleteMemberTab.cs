@@ -36,7 +36,7 @@ namespace LibraryManagementSystem.Forms
 
                 cmd = new SqlCommand("SELECT * FROM member", con);
 
-                // Selects value from members_data table in the database with the same memberID as inputted and assigns them to their respective variables
+                // Selects value from member table in the database where memberID matches with the mem_id column as inputted and assigns them to their respective variables
                 cmdN = new SqlCommand("SELECT name FROM member WHERE mem_id = '" + memberID + "'", con);
                 var name = cmdN.ExecuteScalar();
 
