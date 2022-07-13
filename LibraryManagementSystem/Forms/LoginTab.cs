@@ -30,7 +30,7 @@ namespace LibraryManagementSystem.Forms
             // Checks if any txtBoxes are empty
             if (String.IsNullOrEmpty(txtUser.Text) || String.IsNullOrEmpty(txtPass.Text))
             {
-                MessageBox.Show("Please enter username and password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -44,7 +44,7 @@ namespace LibraryManagementSystem.Forms
                 // Checks if any entered username and password is correct/within the database
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Login Success", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Login Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     Home newTab = new Home();
                     newTab.ShowDialog();
@@ -53,7 +53,7 @@ namespace LibraryManagementSystem.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect username or password.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Incorrect username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUser.Clear();
                     txtPass.Clear();
                 }

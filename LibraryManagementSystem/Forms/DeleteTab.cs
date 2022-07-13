@@ -33,7 +33,7 @@ namespace LibraryManagementSystem
             // checks if the txtBookID is empty
             if (String.IsNullOrEmpty(txtBookID.Text))
             {
-                MessageBox.Show("Please enter a Book ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter a Book ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace LibraryManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("Book ID: " + bookID + " does not exist. Please try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Book ID: " + bookID + " does not exist. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     con.Close();
                     txtBookID.Clear();
                 }
