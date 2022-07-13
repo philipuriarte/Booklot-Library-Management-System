@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTab));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.txtPublication = new System.Windows.Forms.TextBox();
             this.txtEdition = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -52,54 +52,87 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 28.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.label1.Size = new System.Drawing.Size(778, 79);
+            this.label1.Size = new System.Drawing.Size(1182, 103);
             this.label1.TabIndex = 1;
             this.label1.Text = "  Add Books";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(30, 40, 10, 10);
-            this.label2.Size = new System.Drawing.Size(101, 77);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Title:";
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Linen;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbGenre);
             this.panel1.Controls.Add(this.txtPublication);
             this.panel1.Controls.Add(this.txtEdition);
             this.panel1.Controls.Add(this.txtAuthor);
             this.panel1.Controls.Add(this.txtTitle);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(115, 114);
+            this.panel1.Location = new System.Drawing.Point(202, 177);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(543, 291);
+            this.panel1.Size = new System.Drawing.Size(779, 407);
             this.panel1.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.label8.Location = new System.Drawing.Point(102, 310);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(208, 43);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Publication:";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.label9.Location = new System.Drawing.Point(102, 244);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 43);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Edition:";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.label10.Location = new System.Drawing.Point(102, 182);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(143, 43);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Genre:";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.label11.Location = new System.Drawing.Point(102, 117);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(143, 43);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Author:";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.label2.Location = new System.Drawing.Point(102, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 43);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Title:";
             // 
             // cmbGenre
             // 
             this.cmbGenre.AllowDrop = true;
             this.cmbGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.cmbGenre.ForeColor = System.Drawing.Color.Black;
             this.cmbGenre.FormattingEnabled = true;
             this.cmbGenre.Items.AddRange(new object[] {
@@ -113,9 +146,9 @@
             "Computers & Software",
             "Biographies & Autobiographies",
             "Religion & Philosophy"});
-            this.cmbGenre.Location = new System.Drawing.Point(194, 127);
+            this.cmbGenre.Location = new System.Drawing.Point(354, 184);
             this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size(316, 28);
+            this.cmbGenre.Size = new System.Drawing.Size(316, 37);
             this.cmbGenre.TabIndex = 3;
             this.cmbGenre.Text = "Please select...";
             this.cmbGenre.Enter += new System.EventHandler(this.cmbGenre_Enter);
@@ -123,94 +156,46 @@
             // 
             // txtPublication
             // 
-            this.txtPublication.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublication.Location = new System.Drawing.Point(194, 226);
+            this.txtPublication.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.6F);
+            this.txtPublication.Location = new System.Drawing.Point(354, 310);
             this.txtPublication.Name = "txtPublication";
-            this.txtPublication.Size = new System.Drawing.Size(316, 34);
+            this.txtPublication.Size = new System.Drawing.Size(316, 43);
             this.txtPublication.TabIndex = 5;
             // 
             // txtEdition
             // 
-            this.txtEdition.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdition.Location = new System.Drawing.Point(194, 177);
+            this.txtEdition.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.6F);
+            this.txtEdition.Location = new System.Drawing.Point(354, 244);
             this.txtEdition.Name = "txtEdition";
-            this.txtEdition.Size = new System.Drawing.Size(316, 34);
+            this.txtEdition.Size = new System.Drawing.Size(316, 43);
             this.txtEdition.TabIndex = 4;
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(194, 77);
+            this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.6F);
+            this.txtAuthor.Location = new System.Drawing.Point(354, 117);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(316, 34);
+            this.txtAuthor.Size = new System.Drawing.Size(316, 43);
             this.txtAuthor.TabIndex = 2;
             // 
             // txtTitle
             // 
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(194, 32);
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.6F);
+            this.txtTitle.Location = new System.Drawing.Point(354, 52);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(316, 34);
+            this.txtTitle.Size = new System.Drawing.Size(316, 43);
             this.txtTitle.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 218);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label6.Size = new System.Drawing.Size(172, 47);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Publication:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 171);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label5.Size = new System.Drawing.Size(129, 47);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Edition:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 124);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label4.Size = new System.Drawing.Size(118, 47);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Genre:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 77);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
-            this.label3.Size = new System.Drawing.Size(127, 47);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Author:";
             // 
             // btnSubmit
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSubmit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSubmit.BackColor = System.Drawing.Color.Coral;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSubmit.Location = new System.Drawing.Point(221, 419);
+            this.btnSubmit.Location = new System.Drawing.Point(319, 610);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 57);
+            this.btnSubmit.Size = new System.Drawing.Size(248, 74);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -221,11 +206,11 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClear.Location = new System.Drawing.Point(415, 419);
+            this.btnClear.Location = new System.Drawing.Point(612, 610);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 57);
+            this.btnClear.Size = new System.Drawing.Size(248, 74);
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -238,9 +223,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(28, 32);
+            this.btnBack.Location = new System.Drawing.Point(37, 28);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(45, 40);
+            this.btnBack.Size = new System.Drawing.Size(87, 71);
             this.btnBack.TabIndex = 8;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -250,11 +235,11 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Coral;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(112, 95);
+            this.label7.Location = new System.Drawing.Point(198, 154);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(267, 16);
+            this.label7.Size = new System.Drawing.Size(322, 20);
             this.label7.TabIndex = 20;
             this.label7.Text = "Enter book details to add in database";
             // 
@@ -264,7 +249,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(778, 499);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
@@ -272,6 +257,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddTab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,12 +272,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPublication;
         private System.Windows.Forms.TextBox txtEdition;
         private System.Windows.Forms.TextBox txtAuthor;
@@ -301,5 +282,10 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbGenre;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label2;
     }
 }
