@@ -1,20 +1,28 @@
-# Links:
+# Booklot Library Management System
+
+<p align="center">
+  <a href="https://github.com/PhilipU13/Library-Management-System">
+    <img src="LibraryManagementSystem/Resources/final-logo.png" width="250" alt="Booklot Library logo">
+  </a>
+</p>
+
+## Links:
 
 To-Do list: [https://github.com/PhilipU13/Library-Management-System](https://github.com/PhilipU13/Library-Management-System/projects/1?fullscreen=true)
 
 Documentation: [https://docs.google.com/document](https://docs.google.com/document/d/1Ev4pP_uHvwmtyXkHVHUa9ffxdd-uWtnLswkc9_eqtr0/edit?usp=sharing)
 
+Video Demonstration: TBD
+
 sql-source-control repository: https://github.com/madchavez/sql-source-control
 
 Source Control plugin download: https://www.devart.com/dbforge/sql/source-control/download.html
 
-Video Demonstration: TBD
-
-# Notes To make this project work: 
+## Instructions To make this project work: 
 
 * The SQL Database must be cloned from the sql-source-control repository (check in links).
   * Clone the repository to a local folder using cmd
-    * Command: <kbd>git -clone https://github.com/madchavez/sql-source-control.git</kbd>
+    * Command: </br> <kbd>git -clone https://github.com/madchavez/sql-source-control.git</kbd>
   * Download the Source Control plugin for SSMS (check in links).
   * Open SSMS and create a database and name it ***"LibDat"***
   * Link your local database to the repo database.
@@ -29,8 +37,10 @@ Video Demonstration: TBD
   * <kbd>public static string globalServer = ***"MAJO-PC"***;</kbd>
   * <kbd>public static string globalServer = ***"DESKTOP-9MBNT14"***;</kbd>
  
-# Other notes:
+## Creators:
 
-  * The remote SQL Database is still experimental.
-  * Values inside tables are unable to be committed and pulled with this method.
-  
+Section: **BCS22**
+  * Chavez, Miguel Antonio
+  * Dasal, Estelle Marie
+  * Gamit, Mary Josephine
+  * Uriarte, Philip Ronin
