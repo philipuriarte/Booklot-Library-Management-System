@@ -29,13 +29,13 @@ namespace LibraryManagementSystem.Forms
             this.Close();
         }
 
-        // Loads the SQL members_data table to dataGrid when ManageTab form is launched
+        // Loads the SQL member table to dataGrid when ManageTab form is launched
         private void ManageTab_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
 
-            cmd = new SqlCommand("SELECT * FROM members_data", con);
+            cmd = new SqlCommand("SELECT * FROM member", con);
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -45,19 +45,19 @@ namespace LibraryManagementSystem.Forms
             con.Close();
         }
 
-        // Loads the SQL members_data table to dataGrid
+        // Loads the SQL member table to dataGrid
         private void rbtnMembers_CheckedChanged(object sender, EventArgs e)
         {
             ManageTab_Load(sender, e);
         }
 
-        // Loads the SQL active_transactions table to dataGrid
+        // Loads mem_id, name, borrow_date, and return date where member.mem_id matches with borrow_data.member_id table to dataGrid
         private void rbtnTransac_CheckedChanged(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=libraryData;Integrated Security=True");
+            con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
 
-            cmd = new SqlCommand("SELECT * FROM active_transactions", con);
+            cmd = new SqlCommand("SELECT member.mem_id, member.name, borrow_data.borrow_date, borrow_data.return_date FROM member INNER JOIN borrow_data ON member.mem_id=borrow_data.member_id", con);
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
