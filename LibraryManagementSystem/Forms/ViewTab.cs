@@ -38,7 +38,7 @@ namespace LibraryManagementSystem
             con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
 
-            cmd = new SqlCommand("SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id; ", con);
+            cmd = new SqlCommand("SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id; ", con);
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -132,27 +132,27 @@ namespace LibraryManagementSystem
             {
                 // Sort Title in alphabetical order
                 case 0:
-                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.title;";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.title;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort Author in alphabetical order
                 case 1:
-                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.author;";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.author;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort BookID in ascending order
                 case 2:
-                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.book_id";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY book.book_id";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they were borrowed
                 case 3:
-                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.borrow_date;";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.borrow_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
                 // Sort books by the date they should be returned
                 case 4:
-                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.return_date;";
+                    cmdText = "SELECT book.book_id, book.title, book.author, book.genre, book.edition, book.publication, book.status, bd.borrow_date, bd.return_date FROM book INNER JOIN borrow_data bd ON book.book_id = bd.book_id ORDER BY bd.return_date;";
                     cmd = new SqlCommand(cmdText, con);
                     break;
             }
