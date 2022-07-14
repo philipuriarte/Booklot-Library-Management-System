@@ -53,6 +53,7 @@ namespace LibraryManagementSystem
             this.Close();
         }
 
+        // Return book button
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -61,6 +62,7 @@ namespace LibraryManagementSystem
             this.Close();
         }
 
+        // Logout button
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -69,6 +71,7 @@ namespace LibraryManagementSystem
             this.Close();
         }
 
+        // Manage members button
         private void btnManage_Click(object sender, EventArgs e)
         {
             this.Hide();
