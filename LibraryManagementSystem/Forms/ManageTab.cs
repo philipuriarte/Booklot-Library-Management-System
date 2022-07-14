@@ -57,7 +57,7 @@ namespace LibraryManagementSystem.Forms
             con = new SqlConnection("Data Source=" + Program.globalServer + "\\SQLEXPRESS;Initial Catalog=LibDat;Integrated Security=True");
             con.Open();
 
-            cmd = new SqlCommand("SELECT member.mem_id, member.name, borrow_data.borrow_date, borrow_data.return_date FROM member INNER JOIN borrow_data ON member.mem_id=borrow_data.member_id", con);
+            cmd = new SqlCommand("SELECT member.mem_id, member.name, book.book_id, book.title, borrow_data.borrow_date, borrow_data.return_date FROM member INNER JOIN borrow_data ON member.mem_id=borrow_data.member_id INNER JOIN book ON borrow_data.book_id=book.book_id", con);
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
