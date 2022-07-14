@@ -34,7 +34,7 @@ Source Control plugin download: https://www.devart.com/dbforge/sql/source-contro
 * The value of globalServer in Program.cs must be modified into the name of your local server.
   * <kbd>public static string globalServer = ***"MAJO-PC"***;</kbd>
   * <kbd>public static string globalServer = ***"DESKTOP-9MBNT14"***;</kbd>
- 
+
 ## Creators:
 
 Section: **BCS22**
@@ -42,3 +42,9 @@ Section: **BCS22**
   * Dasal, Estelle Marie
   * Gamit, Mary Josephine
   * Uriarte, Philip Ronin
+
+## Other notes:
+
+* Application created with Visual Studio 2022
+* Database created with SQL Server Management Studio
+ 
