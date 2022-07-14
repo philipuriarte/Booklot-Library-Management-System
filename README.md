@@ -10,7 +10,7 @@
 
 Documentation: [https://docs.google.com/document](https://docs.google.com/document/d/1Ev4pP_uHvwmtyXkHVHUa9ffxdd-uWtnLswkc9_eqtr0/edit?usp=sharing)
 
-Video demonstration: TBD
+Video demonstration: [https://docs.google.com/video-demonstration](https://drive.google.com/file/d/1Kr3BkNZ8A4V00AIdteiOqy9-G1xdnduZ/view?usp=sharing)
 
 sql-source-control repository: https://github.com/madchavez/sql-source-control
 
